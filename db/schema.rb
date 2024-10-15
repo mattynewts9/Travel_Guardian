@@ -10,9 +10,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_14_170929) do
+ActiveRecord::Schema[7.2].define(version: 2024_10_15_155928) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "crimes", force: :cascade do |t|
+    t.string "category"
+    t.float "longitude"
+    t.float "latitude"
+    t.date "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "favourites", force: :cascade do |t|
+    t.bigint "hotel_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hotel_id"], name: "index_favourites_on_hotel_id"
+    t.index ["user_id"], name: "index_favourites_on_user_id"
+  end
+
+  create_table "hotels", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.float "latitude"
+    t.float "longitude"
+    t.float "crime_rating"
+    t.string "name"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "address"
+    t.index ["user_id"], name: "index_hotels_on_user_id"
+  end
+
+  create_table "reports", force: :cascade do |t|
+    t.bigint "hotel_id", null: false
+    t.text "comment"
+    t.float "safety_rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hotel_id"], name: "index_reports_on_hotel_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -25,4 +65,9 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_14_170929) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
+
+  add_foreign_key "favourites", "hotels"
+  add_foreign_key "favourites", "users"
+  add_foreign_key "hotels", "users"
+  add_foreign_key "reports", "hotels"
 end
