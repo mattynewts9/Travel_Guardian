@@ -4,4 +4,11 @@ class Hotel < ApplicationRecord
 
   belongs_to :user
   has_many :reports
+
+  include PgSearch::Model
+  pg_search_scope :search_by_name_and_address,
+                  against: %i[name address],
+                  using: {
+                    tsearch: { prefix: true }
+                  }
 end
