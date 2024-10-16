@@ -2,7 +2,12 @@ class HotelsController < ApplicationController
   before_action :authenticate_user!
   def index
     @hotels = Hotel.all
-    @hotels = @hotels.where(title: params[:search]) if params[:search].present?
+    if params[:search].present?
+      sql_subquery = <<~SQL
+        hotels.name @@ :search
+      SQL
+      @hotels = @hotels.where(sql_subquery, search: params[:search])
+    end
     # The `geocoded` scope filters only flats with coordinates
     @markers = @hotels.geocoded.map do |hotel|
       {
