@@ -20,7 +20,8 @@ Hotel.create(
     image: "https://www.livingnorth.com/images/media/articles/life-and-style/travel/The%20Savoy/Savoy%201.jpg?",
     user: freddy)
 
-Hotel.create(name: "The Ritz London",
+Hotel.create(
+    name: "The Ritz London",
     latitude: 51.5074,
     longitude: -0.1419,
     crime_rating: 4.7,
