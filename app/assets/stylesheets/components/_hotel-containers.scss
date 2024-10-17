@@ -1,13 +1,30 @@
 .hotel-containers {
-  width: 400px;
-  margin-left: 40px;
-  margin-bottom: 20px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  margin-top: 200px;
+
+  .hotel-content:nth-child(odd) {
+    display: flex;
+    text-align: left;
+    background-color: rgba(rgb(194, 194, 201), 0.5);
+    color: white;
+    margin-bottom: 80px;border-radius: 10px;
+
+  }
 
   img {
-    width: 300px;
+    width: 500px;
     height: 300px;
-    margin-bottom: 20px;
-    border-radius: 30px;
+    border-radius: 10px;
 
+  }
+
+  .hotel-info {
+    margin-top: 10px;
+    margin-left: 10px;
+    display: grid;
   }
 }

@@ -1,24 +1,33 @@
-<div class="search-text"><h4>Based on your search...here is what we found</h4>
-  <h2>This area has an average safety rating of ....</h2>
+<h5>Based on your search... here is what we found</h5>
+<div class="d-flex">
+  <h2 class="d-flex">This area has an average safety rating of:
+  <% total_crime_rating = @hotels.sum(:crime_rating) %>
+  <% average_crime_rating = total_crime_rating / @hotels.size %>
+  <p class="mx-1"><%= average_crime_rating %></p></h2>
 </div>
 
 <div class="map-container">
-  <div class="mapbox" style="width: 60%; height: 300px;"
+  <table>
+    <tr>
+      <th>crimes within the area of <%= params[:search] %></td>
+    </tr>
+  </table>
+  <div class="mapbox" style="width: 50%; height: 400px;"
     data-controller="map"
     data-map-markers-value="<%= @markers.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
 
-
 <div class="hotel-containers">
- <% @hotels.each do |hotel| %>
-  <%= image_tag hotel.image %>
-  <div class="d-flex">
-    <%= hotel.name %>
-  <%= hotel.crime_rating %>
-  <%= hotel.address %>
+  <% @hotels.each do |hotel| %>
+  <div class="hotel-content">
+      <%= image_tag hotel.image %>
+    <div class="hotel-info">
+        <h5><%= hotel.name %></h5>
+        <p><%= hotel.crime_rating %></p>
+        <p><%= hotel.address %></p>
+    </div>
   </div>
- <% end %>
-
+<% end %>
 </div>
