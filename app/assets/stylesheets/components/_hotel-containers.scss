@@ -6,13 +6,12 @@
   width: 100%;
   margin-top: 200px;
 
-  .hotel-content:nth-child(odd) {
+  .hotel-content {
     display: flex;
     text-align: left;
     background-color: rgba(rgb(194, 194, 201), 0.5);
-    color: white;
+    color: green;
     margin-bottom: 80px;border-radius: 10px;
-
   }
 
   img {

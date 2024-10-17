@@ -7,11 +7,28 @@
 </div>
 
 <div class="map-container">
-  <table>
-    <tr>
-      <th>crimes within the area of <%= params[:search] %></td>
-    </tr>
-  </table>
+  <table class="d">
+  <tr>
+    <th><%=%> crimes within the area of <%= params[:search] %></th>
+    <th>Contact</th>
+    <th>Country</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Island Trading</td>
+    <td>Helen Bennett</td>
+    <td>UK</td>
+  </tr>
+  <tr>
+    <td>Magazzini Alimentari Riuniti</td>
+    <td>Giovanni Rovelli</td>
+    <td>Italy</td>
+  </tr>
+</table>
   <div class="mapbox" style="width: 50%; height: 400px;"
     data-controller="map"
     data-map-markers-value="<%= @markers.to_json %>"
@@ -25,8 +42,8 @@
       <%= image_tag hotel.image %>
     <div class="hotel-info">
         <h5><%= hotel.name %></h5>
-        <p><%= hotel.crime_rating %></p>
         <p><%= hotel.address %></p>
+        <p><%= hotel.crime_rating %></p>
     </div>
   </div>
 <% end %>
