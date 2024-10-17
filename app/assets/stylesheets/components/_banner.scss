@@ -2,15 +2,33 @@
   height: 400px;
   display: flex;
   justify-content: center;
-  align-items: center;
+
   margin: 0 auto;
 }
 
 .form-container {
   text-align: center;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.299);
-  padding: 20px;
+  background-color: rgb(248, 243, 243);
+  padding: 10px;
   border-radius: 10px;
   margin: 0 auto;
+}
+
+.tag-line {
+  color: white;
+  margin-bottom: 60px;
+  margin-top: 60px;
+  text-size-adjust: 40px;
+  letter-spacing: 1px;
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.tag-2 {
+  color: white;
+  right: 50px;
+  margin-bottom: 60px;
+  letter-spacing: 1px;
+  font-family: Arial, Helvetica, sans-serif;
 }

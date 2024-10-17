@@ -1,0 +1,65 @@
+.card-category {
+
+  background: rgb(241, 254, 255);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 500px;
+  height: 400px;
+  justify-content: center;
+
+  padding-top: 10px;
+  margin-left: 15px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.card-header {
+  text-align: center;
+  color: rgb(38, 60, 71);
+  margin-top: 80px;
+  margin-bottom: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.card-category h3 {
+  text-align: center;
+  margin-top: 70px;
+  font-family: Arial, Helvetica, sans-serif;
+  justify-content: center;
+
+}
+
+
+.card-category p {
+  text-align: center;
+  margin-top: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.card-category-icon  {
+  position: absolute;
+  top: -50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-category img {
+  height: 90px;
+  justify-content: center;
+}
+
+.card-header-reports {
+  text-align: center;
+  color: rgb(38, 60, 71);
+  margin-top: 80px;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.card-header-sub {
+  text-align: center;
+}
