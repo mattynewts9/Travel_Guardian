@@ -1,6 +1,5 @@
 <div class="search-banner position-relative" style='background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8)), url("<%= asset_path('banner_travel_guardian.png') %>"); height: 500px; background-size: cover; background-repeat: no-repeat;'>
   <div><h2 class="tag-line">We help you travel the world...Safely!</h2>
-
     <div class="form-container">
       <%= form_tag hotels_path, method: :get do %>
         <%= text_field_tag :search, params[:search], class:"form-search-container" %>
