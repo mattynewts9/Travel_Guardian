@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="search-banner" style='background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8)), url("<%= asset_path('london-image.jpg') %>"); height: 500px; background-size: cover; background-repeat: no-repeat;'>
   <div class="form-container">
     <%= form_tag hotels_path, method: :get do %>
@@ -5,5 +6,51 @@
       <%= label_tag :search, "" %>
       <%= submit_tag "Search" %>
     <% end %>
+=======
+
+
+<div class="search-banner position-relative" style='background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8)), url("<%= asset_path('banner_travel_guardian.png') %>"); height: 500px; background-size: cover; background-repeat: no-repeat;'>
+  <div><h2 class="tag-line">We help you travel the world...Safely!</h2>
+
+    <div class="form-container">
+      <%= form_tag hotels_path, method: :get do %>
+        <%= text_field_tag :search, params[:search], class:"form-search-container" %>
+        <%= label_tag :search, "" %>
+        <%= submit_tag "Search" %>
+      <% end %>
+    </div>
+>>>>>>> master
   </div>
+    <h3 class="tag-2 position-absolute bottom-0">Visit new places & feel 100% Secure <i class="fa-regular fa-circle-check" style="color: #f9fafa;"></i></h3>
+</div>
+
+
+
+<div class="container">
+    <div class="card-header"><h2>Why Travel Guardian?</h2></div>
+    <div class="container d-flex justify-content-between align-items-center py-3">
+      <div class="card-category">
+        <div class="card-category-icon end-50"><%= image_tag "man-with-case.png" %></div>
+          <h3>Travel safe</h3>
+          <p>Check out our top safety tips and emergency contacts in your area! Information and advice to help you stay safe while you travel. We are on a mission to make global experiences possible!</p>
+      </div>
+
+      <div class="card-category">
+          <div class="card-category-icon end-50"><%= image_tag "shield.png" %></div>
+          <h3>Compare safety ratings</h3>
+          <p>Search hundreds of hotels at once! Millions of students use our service every year. So whether you’re a student or young person hungry to see as much of the world, you’ll find the hotels in the safest areas here at TravelGuardian UK.. </p>
+        </div>
+
+        <div class="card-category">
+            <div class="card-category-icon end-50"><%= image_tag "info_icon.png" %></div>
+           <h3>We help you travel the world...Safely</h3>
+           <P>TravelGuardian UK empowers students and young people to travel the world. ,
+            and most importantly check your area safety so you can make an informed decision before committing to book your hotel.</p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="card-header-reports"><h2>Travel Guardian Community Reports!</h2></div>
+      <p class="card-header-sub"> Real, honest reports by the Travel Guardian community!</p>
 </div>
