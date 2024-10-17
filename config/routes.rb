@@ -1,16 +1,20 @@
 Rails.application.routes.draw do
-  get "emergency_contacts/index"
   devise_for :users
+
+  # Root route
   root to: "pages#home"
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  resources :hotels, only: [ :index ]
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
+
+  # Health check route for monitoring
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Render dynamic PWA files from app/views/pwa/*
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
-  get 'emergency_contacts', to: 'emergency_contacts#index'
-  get 'emergency_contacts', to: 'contacts#emergency'
+
+  # Emergency contacts routes
+  resources :emergency_contacts, only: [:index]
+
+  # Safety reports and hotels routes
+  resources :safety_reports # This allows all RESTful actions
+  resources :hotels, only: [:index]
 end

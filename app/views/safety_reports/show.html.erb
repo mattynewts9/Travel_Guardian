@@ -1,0 +1,7 @@
+<h1><%= @safety_report.title %></h1>
+<p><strong>Hotel Name:</strong> <%= @safety_report.hotel_name %></p>
+<p><strong>Report Date:</strong> <%= @safety_report.report_date %></p>
+<p><strong>Description:</strong> <%= @safety_report.description %></p>
+
+<%= link_to 'Edit', edit_safety_report_path(@safety_report) %> |
+<%= link_to 'Back', safety_reports_path %>

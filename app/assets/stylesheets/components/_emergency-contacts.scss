@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #e6ffe6; /* Light green background */
+  color: #333; /* Dark text for readability */
+}
+
+.container {
+  max-width: 800px; /* Set a max width for better readability */
+  margin: 50px auto; /* Center the container with some top margin */
+  padding: 20px;
+  background-color: #fff; /* White background for the content */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+h1 {
+  font-size: 2.5rem; /* Large heading */
+  text-align: center; /* Center the heading */
+  color: #4CAF50; /* Green color for the main heading */
+  margin-bottom: 20px; /* Space below the heading */
+}
+
+h2 {
+  font-size: 2rem; /* Slightly smaller for subheadings */
+  margin-top: 20px; /* Space above subheadings */
+  text-align: center; /* Center the subheadings */
+  color: #333; /* Dark color for subheadings */
+}
+
+p {
+  text-align: center; /* Center paragraph text */
+  font-size: 1rem; /* Standard font size */
+  line-height: 1.5; /* Spacing between lines for readability */
+  margin: 10px 0; /* Space above and below paragraphs */
+}
+
+ul {
+  list-style-type: none; /* Remove default bullet points */
+  padding: 0; /* Remove padding */
+  text-align: center; /* Center the list items */
+}
+
+.custom-check-bullets {
+  list-style: none; /* Remove default bullet points */
+}
+
+.custom-check-bullets li {
+  position: relative; /* Positioning for custom bullets */
+  padding-left: 25px; /* Space for custom bullet */
+  text-align: left; /* Left align text in list items */
+}
+
+.custom-check-bullets li::before {
+  content: "✓"; /* Black check mark */
+  position: absolute;
+  left: 0; /* Position at the start of the list item */
+  color: black; /* Black color for check mark */
+  font-weight: bold; /* Make check mark bold */
+  font-size: 1.2rem; /* Size of the check mark */
+  line-height: 1; /* Align vertically */
+}
+
+.list-group {
+  margin-top: 20px; /* Space above the list group */
+}
+
+.list-group-item {
+  background-color: #f8f9fa; /* Light background for list items */
+  padding: 15px; /* Padding inside list items */
+  border: 1px solid #ddd; /* Border around list items */
+  border-radius: 5px; /* Rounded corners */
+  margin: 5px 0; /* Space between list items */
+  text-align: left; /* Left align text in list items */
+}
+
+.list-group-item strong {
+  color: #4CAF50; /* Green color for strong text */
+}
+
+.btn {
+  display: inline-flex; /* Align button content */
+  align-items: center; /* Center icon and text vertically */
+  background-color: #007bff; /* Button background color */
+  color: #fff; /* White text */
+  padding: 10px 15px; /* Button padding */
+  border-radius: 5px; /* Rounded corners */
+  text-decoration: none; /* Remove underline from link */
+  margin-top: 20px; /* Space above the button */
+}
+
+.btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+img {
+  margin-right: 8px; /* Space between image and text */
+  display: block; /* Display block to center the image */
+  margin: 0 auto; /* Center the image */
+  max-width: 100%; /* Make image responsive */
+  height: auto; /* Maintain aspect ratio */
+}
+.red-number {
+  color: red; /* Red color for numbers */
+}

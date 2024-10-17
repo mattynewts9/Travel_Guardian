@@ -1,0 +1,28 @@
+<h1>Safety Reports</h1>
+<%= link_to 'New Safety Report', new_safety_report_path %>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Hotel Name</th>
+      <th>Comments</th>
+      <th>Rating</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @safety_reports.each do |report| %>
+      <tr>
+        <td><%= report.title %></td>
+        <td><%= report.hotel_name %></td>
+        <td><%= report.comments %></td>
+        <td><%= report.rating %></td>
+        <td>
+          <%= link_to 'Show', safety_report_path(report) %>
+          <%= link_to 'Edit', edit_safety_report_path(report) %>
+          <%= link_to 'Delete', safety_report_path(report), method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
