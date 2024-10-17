@@ -1,11 +1,10 @@
 .map-container {
   display: flex;
-  padding-left: 100px;
-  justify-content: end;
-  margin-right: 60px;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  justify-content: space-around;
 }
-
-
 
 
 .search-text {
@@ -16,4 +15,6 @@
   h2 {
     margin-top: 40px;
   }
+
+
 }
