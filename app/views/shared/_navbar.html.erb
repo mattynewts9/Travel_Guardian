@@ -9,7 +9,7 @@
     <div class="navbar-site-links">
       <ul class="navbar-nav me-auto">
         <li class="nav-item active">
-         <%= link_to "Home", "pages#home", class: "nav-link-center" %>
+         <%= link_to "Home", root_path, class: "nav-link-center" %>
         </li>
         <li class="nav-item">
           <%= link_to "My favourites", "#", class: "nav-link-center" %>
@@ -18,7 +18,7 @@
          <%= link_to "Reports", "#", class: "nav-link-center" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Travel safe", "#", class: "nav-link-center" %>
+          <%= link_to "Travel safe", emergency_contacts_path, class: "nav-link-center" %>
         </li>
       </ul>
 
@@ -52,7 +52,7 @@
             <%# <%= link_to "Login", new_user_session_path, class: "nav-link" %>
           <%# <% <!--/li--> %>
         <%# end %>
-        
+
 
       </ul>
     </div>
