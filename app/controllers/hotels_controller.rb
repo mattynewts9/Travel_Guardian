@@ -3,18 +3,35 @@ class HotelsController < ApplicationController
   def index
     if params[:search].present?
       @hotels = Hotel.search_by_name_and_address(params[:search])
+      @crimes = Crime.near(params[:search], 10)
     else
       @hotels = Hotel.all
+      @crimes = Crime.none
     end
-    # The `geocoded` scope filters only flats with coordinates
-    @markers = @hotels.geocoded.map do |hotel|
+
+    @hotel_markers = @hotels.geocoded.map do |hotel|
       {
         lat: hotel.latitude,
-        lng: hotel.longitude
+        lng: hotel.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: { hotel: hotel }),
+        marker_color: 'blue'
       }
     end
-  end
-  # def show
 
-  # end
+    @crime_markers = @crimes.geocoded.map do |crime|
+      {
+        lat: crime.latitude,
+        lng: crime.longitude,
+        marker_color: 'red'
+      }
+    end
+
+    @categories = Crime.where.not(category: nil).distinct.pluck(:category)
+    @dates = Crime.where.not(date: nil).distinct.pluck(:date)
+  end
+
+  private
+
+  def params_search
+  end
 end
