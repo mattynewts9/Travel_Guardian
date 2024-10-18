@@ -1,0 +1,17 @@
+.full-width-form {
+  width: 100%;
+  max-width: 800px; /* Increased max-width */
+  margin: 0 auto;
+  padding: 20px; /* Added padding for more space inside the form */
+}
+
+.full-width {
+  width: 100%;
+}
+
+.submit-button {
+  display: block;
+  margin-top: 20px;
+  padding: 10px 15px; /* Optional: Add padding to the button for a larger click area */
+  font-size: 16px; /* Optional: Increase font size for better readability */
+}

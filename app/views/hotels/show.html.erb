@@ -1,0 +1,16 @@
+<h1><%= @hotel.name %></h1>
+
+<h2>Reports:</h2>
+
+<h3>Add a Report:</h3>
+<%= form_with model: [@hotel, @report], local: true, html: { class: 'full-width-form' } do |f| %>
+  <div>
+    <%= f.label :content %>
+    <%= f.text_area :content, placeholder: "Enter your report here...", rows: 5, class: 'full-width' %>
+  </div>
+  <div>
+    <%= f.label :safety_rating %>
+    <%= f.number_field :safety_rating, in: 1..5, class: 'full-width' %>
+  </div>
+  <%= f.submit 'Submit Report', class: 'submit-button' %>
+<% end %>
