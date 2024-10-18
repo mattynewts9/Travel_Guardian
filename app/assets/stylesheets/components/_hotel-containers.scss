@@ -1,29 +1,56 @@
-.hotel-containers {
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  width: 100%;
+.container {
   margin-top: 200px;
+  margin-bottom: 200px;
 
-  .hotel-content {
-    display: flex;
-    text-align: left;
-    background-color: rgba(rgb(194, 194, 201), 0.5);
-    color: green;
-    margin-bottom: 80px;border-radius: 10px;
-  }
 
-  img {
-    width: 500px;
-    height: 300px;
-    border-radius: 10px;
+}
 
-  }
+.card-product-container {
+  display: flex;
 
-  .hotel-info {
-    margin-top: 10px;
-    margin-left: 10px;
-    display: grid;
-  }
+  gap: 48px;
+  margin-top: 200px;
+  margin-bottom: 200px;
+  margin-left: 120px;
+}
+
+.card-product {
+  overflow: hidden;
+  height: 200px;
+  background: rgb(248, 248, 248);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  justify-content: space-between;
+  border-radius: 5px;
+  display: flex;
+
+
+}
+
+.card-product img {
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+}
+
+.card-product h2 {
+  font-size: 14px;
+  font-weight: bold;
+
+}
+
+.card-product p {
+  font-size: 16px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product-info {
+  padding: 30px;
+}
+
+.btn {
+  margin-top: 10px;
+  border-radius: 5px;
 }
