@@ -84,6 +84,7 @@ freddy = User.create(email: "freddy@123.com", password: "123123")
 paul = User.create(email: "paul@123.com", password: "123123")
 john = User.create(email: "john@123.com", password: "123123")
 
+puts "Creating hotels..."
 
 puts "creating hotels"
 
@@ -131,4 +132,19 @@ Hotel.create(
   user: john
 )
 
-puts "done"
+puts "Creating fake reports.."
+
+require 'faker'
+
+[ savoy, ritz, claridges ].each do |hotel|
+  5.times do
+    Report.create!(
+      comment: Faker::Lorem.paragraph(sentence_count: 3),
+      safety_rating: rand(1..5),
+      hotel: hotel,
+      user: User.order('RANDOM()').first # Assign a random user to the review
+    )
+  end
+end
+
+puts "Done!"

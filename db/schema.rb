@@ -52,7 +52,9 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_18_133633) do
     t.float "safety_rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
     t.index ["hotel_id"], name: "index_reports_on_hotel_id"
+    t.index ["user_id"], name: "index_reports_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -71,4 +73,5 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_18_133633) do
   add_foreign_key "favourites", "users"
   add_foreign_key "hotels", "users"
   add_foreign_key "reports", "hotels"
+  add_foreign_key "reports", "users"
 end

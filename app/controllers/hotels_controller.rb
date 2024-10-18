@@ -1,5 +1,6 @@
 class HotelsController < ApplicationController
   before_action :authenticate_user!
+
   def index
     if params[:search].present?
       @hotels = Hotel.search_by_name_and_address(params[:search])
@@ -30,8 +31,9 @@ class HotelsController < ApplicationController
     @dates = Crime.where.not(date: nil).distinct.pluck(:date)
   end
 
-  private
-
-  def params_search
+  def show
+    @hotel = Hotel.find(params[:id])
+    @reports = @hotel.reports.includes(:user) # Load reviews for the hotel
+    @report = Report.new # Initialize a new review for the form
   end
 end
