@@ -55,7 +55,7 @@
         <h3><%= hotel.name %></h3>
         <p><%= hotel.address %></p>
         <h5><%= hotel.crime_rating %></h5>
-        <%= link_to "View crime rates!", "#", class: "btn btn-primary btn-font-white" %>
+        <%= link_to "View crime rates!", hotel_path(hotel), class: "btn btn-primary btn-font-white" %>
       </div>
     </div>
   <% end %>
