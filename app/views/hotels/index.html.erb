@@ -10,12 +10,12 @@
   <table class="d">
   <tr>
     <th><%=%> crimes within the area of <%= params[:search] %></th>
-    <th>Contact</th>
-    <th>Country</th>
+    <th></th>
+    <th></th>
   </tr>
   <tr>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
+    <td><%= @categories %></td>
+    <td><%= @dates %></td>
     <td>Germany</td>
   </tr>
   <tr>
@@ -31,7 +31,8 @@
 </table>
   <div class="mapbox" style="width: 50%; height: 400px;"
     data-controller="map"
-    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-hotel-markers-value="<%= @hotel_markers.to_json %>"
+    data-map-crime-markers-value="<%= @crime_markers.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
