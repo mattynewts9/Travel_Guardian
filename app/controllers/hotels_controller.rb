@@ -15,6 +15,7 @@ class HotelsController < ApplicationController
         lat: hotel.latitude,
         lng: hotel.longitude,
         info_window_html: render_to_string(partial: "info_window", locals: { hotel: hotel }),
+        marker_html: render_to_string(partial: "hotel_marker"),
         marker_color: 'blue'
       }
     end
@@ -23,6 +24,7 @@ class HotelsController < ApplicationController
       {
         lat: crime.latitude,
         lng: crime.longitude,
+        marker_html: render_to_string(partial: "crime_marker"),
         marker_color: 'red'
       }
     end
