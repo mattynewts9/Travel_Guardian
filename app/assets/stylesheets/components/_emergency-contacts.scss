@@ -1,0 +1,86 @@
+/* General styling */
+body {
+  background-color: white;
+  font-family: 'Arial', sans-serif;
+}
+
+h1, h2 {
+  color: #2c3e50;
+  text-align: center;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Travel tips section styling */
+.custom-travel-tips {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 20px;
+}
+
+.custom-travel-tips li {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 15px;
+}
+
+.custom-travel-tips li strong {
+  font-size: 20px;
+  color: #2c3e50;
+}
+
+.custom-travel-tips p {
+  font-size: 20px;
+  color: #555;
+  margin-top: 5px;
+}
+
+/* Emergency contact image styling */
+.text-center img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Emergency contacts list group */
+.list-group-item {
+  text-align: center;
+  font-size: 18px;
+  background-color: #f9f9f9;
+}
+
+/* Custom button styling */
+.custom-btn {
+  padding: 15px 30px;
+  font-size: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.custom-btn:hover {
+  background-color: blue;
+  color: white;
+}
+
+.custom-btn:hover img {
+  filter: brightness(0) invert(1);
+}
+
+/* Underline text styling */
+.underline-text {
+  text-decoration: underline;
+}
+
+/* Specific paragraph styling inside .text-center */
+.text-center p {
+  font-size: 20px;
+  color: #000;
+}

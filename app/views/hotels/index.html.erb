@@ -1,7 +1,3 @@
-
-
-
-
 <div class="container-crime">
   <h3 class="search-results">Based on your search... here is what we found</h3>
   <div class="d-flex">
@@ -40,6 +36,8 @@
     data-controller="map"
     data-map-hotel-markers-value="<%= @hotel_markers.to_json %>"
     data-map-crime-markers-value="<%= @crime_markers.to_json %>"
+    data-map-hotel-icon-url-value="<%= asset_path('hotel-icon.png') %>"
+    data-map-crime-icon-url-value="<%= asset_path('spyware.png') %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>

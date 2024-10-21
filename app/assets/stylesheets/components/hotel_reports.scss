@@ -1,17 +1,58 @@
-.full-width-form {
-  width: 100%;
-  max-width: 800px; /* Increased max-width */
+// Center the hotel name text
+.hotel-name {
+  text-align: center;  /* Center hotel name text */
+  font-size: 2.5rem;   /* Larger font size for hotel name */
+  margin-bottom: 20px;
+}
+
+// Center the form container and increase form size
+.form-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  max-width: 800px;    /* Increased form width */
   margin: 0 auto;
-  padding: 20px; /* Added padding for more space inside the form */
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.full-width {
+// Form labels
+.form-label {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+// Form controls
+.form-control {
   width: 100%;
+  padding: 10px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 16px;
+  box-sizing: border-box;
 }
 
+// Larger report text area
+.report-text-area {
+  height: 200px;  /* Make the report text box bigger */
+}
+
+// Larger submit button
 .submit-button {
-  display: block;
-  margin-top: 20px;
-  padding: 10px 15px; /* Optional: Add padding to the button for a larger click area */
-  font-size: 16px; /* Optional: Increase font size for better readability */
+  width: 100%;             /* Full width button */
+  padding: 15px;           /* Increased padding */
+  background-color: #007bff;
+  color: rgb(245, 32, 32);
+  border: none;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
 }
