@@ -1,15 +1,4 @@
-.mapboxgl-popup {
-  max-width: 200px;
-}
-
-.mapboxgl-popup-content {
-  text-align: left;
-  font-family: "Open Sans", sans-serif;
-  width: 300px;
-  height: 240px;
-  padding: 16px;
-}
-
+// hotel marker styling
 .info {
   justify-content: center;
   align-items: center;
@@ -26,6 +15,15 @@
   }
 }
 
+// crime marker styling
+.crime-popup-content {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  width: 100px;
+  height: 90px;
+  padding: 16px;
+  max-width: 100px;
+}
 
 .hotel-content {
   margin-top: 10px;

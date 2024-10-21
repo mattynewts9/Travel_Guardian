@@ -7,7 +7,7 @@ class HotelsController < ApplicationController
       @crimes = Crime.near(params[:search], 10)
     else
       @hotels = Hotel.all
-      @crimes = Crime.none
+      @crimes = nil
     end
 
     @hotel_markers = @hotels.geocoded.map do |hotel|
@@ -20,13 +20,16 @@ class HotelsController < ApplicationController
       }
     end
 
-    @crime_markers = @crimes.geocoded.map do |crime|
-      {
-        lat: crime.latitude,
-        lng: crime.longitude,
-        marker_html: render_to_string(partial: "crime_marker"),
-        marker_color: 'red'
-      }
+    if @crimes
+      @crime_markers = @crimes.geocoded.map do |crime|
+        {
+          lat: crime.latitude,
+          lng: crime.longitude,
+          marker_html: render_to_string(partial: "crime_marker"),
+          info_window_html: render_to_string(partial: "crime_info_window", locals: { crime: crime }),
+          marker_color: 'red'
+        }
+      end
     end
 
     @categories = Crime.where.not(category: nil).distinct.pluck(:category)
