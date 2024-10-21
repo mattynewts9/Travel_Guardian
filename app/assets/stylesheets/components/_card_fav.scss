@@ -1,0 +1,68 @@
+.container-fav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 100px;
+}
+
+
+.fav-header {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 80px;
+  color: rgb(3, 40, 51);
+}
+
+
+.card-fav {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  height: 330px;
+  width: 30%;
+  & img {
+    height: 240px;
+  }
+}
+
+.card-fav-infos h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+  padding: 4px;
+  color: rgb(3, 40, 51);
+}
+
+.card-fav-infos p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+  padding: 4px;
+  padding-bottom: 4px;
+}
+
+
+.card-fav .card-fav-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.heart {
+  position:absolute;
+  top: 10px;
+  right: 40px;
+  margin-top: 4px;
+}
+
+.trash-can {
+  position:absolute;
+  top: 10px;
+  right: 20px;
+  margin-top: 4px;
+
+}

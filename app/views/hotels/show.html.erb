@@ -23,3 +23,7 @@
     </div>
   <% end %>
 </div>
+
+<%= simple_form_for [@hotel, @favourite] do |f| %>
+  <%= f.submit "Submit favourite", class: "btn btn-primary" %>
+<% end %>
