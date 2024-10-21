@@ -14,3 +14,11 @@
   </div>
   <%= f.submit 'Submit Report', class: 'submit-button' %>
 <% end %>
+
+
+<%# <%= link_to "Add to favourites!", favourites_path(@hotel), class: "btn btn-primary btn-font-white" %>
+
+
+<%= simple_form_for [@hotel, @favourite] do |f| %>
+  <%= f.submit "Submit favourite", class: "btn btn-primary" %>
+<% end %>
