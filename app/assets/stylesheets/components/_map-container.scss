@@ -1,9 +1,11 @@
 .map-container {
   display: flex;
-  margin-right: 10px;
-  margin-top: 10px;
+  height: 500px;
   border-radius: 10px;
-  justify-content: space-around;
+  justify-content: space-between;
+  gap: 20px;
+  background-color: #2b5058;
+  color: white;
 }
 
 
@@ -18,3 +20,30 @@
 
 
 }
+
+.table-container {
+  width: 50%;
+  height: 421px;
+  font-family: 'Kanit';
+  text-align: center;
+  table-layout: fixed;
+
+    th{
+      font-weight: 500;
+      height: 18px;
+    }
+
+    td {
+      font-weight: 200;
+      width:15px;
+      text-align: center;
+      height: 10px;
+      padding: 12px;
+
+    }
+}
+
+.table-container tr:nth-child(even)
+    {
+      background-color: #a0a0a08f;
+    }

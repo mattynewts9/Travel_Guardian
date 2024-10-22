@@ -5,9 +5,7 @@ export default class extends Controller {
   static values = {
     apiKey: String,
     hotelMarkers: Array,
-    crimeMarkers: Array,
-    hotelIconUrl: String,
-    crimeIconUrl: String
+    crimeMarkers: Array
   }
 
   connect() {
@@ -45,7 +43,7 @@ export default class extends Controller {
 
   #addCrimeMarkersToMap() {
     this.crimeMarkersValue.forEach((marker) => {
-      const popup = new mapboxgl.Popup().setText(`Crime: ${marker.type}`);
+      const popup = new mapboxgl.Popup().setHTML(marker.info_window_html);
 
       const customMarker = document.createElement("div")
       customMarker.innerHTML = marker.marker_html

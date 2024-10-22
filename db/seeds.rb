@@ -16,11 +16,19 @@ crimelondon = RestClient.get('https://data.police.uk/api/crimes-at-location?date
 crime_london = JSON.parse(crimelondon)
 
 crime_london.each do |crime|
-  Crime.create(
-    latitude: crime['location']['latitude'],
-    longitude: crime['location']['longitude'],
-    category: crime['category']['other-theft'],
-    date: crime['month'])
+  if crime['month'].nil?
+    Crime.create(
+      latitude: crime['location']['latitude'],
+      longitude: crime['location']['longitude'],
+      category: crime['category'],
+      date: crime['date'])
+  else
+    Crime.create(
+      latitude: crime['location']['latitude'],
+      longitude: crime['location']['longitude'],
+      category: crime['category'],
+      date: crime['month'])
+  end
 end
 
 crime1 = RestClient.get('https://data.police.uk/api/crimes-at-location?date=2024-01&lat=51.5101&lng=-0.1205')
@@ -29,7 +37,7 @@ crime_one = JSON.parse(crime1)
 crime_one.each do |crime|
   Crime.create(latitude: crime['location']['latitude'],
               longitude: crime['location']['longitude'],
-              category: crime['category']['other-theft'],
+              category: crime['category'],
               date: crime['month'])
 end
 
@@ -39,7 +47,7 @@ crime_two = JSON.parse(crimes)
 crime_two.each do |crime|
   Crime.create(latitude: crime['location']['latitude'],
               longitude: crime['location']['longitude'],
-              category: crime['category']['other-theft'],
+              category: crime['category'],
               date: crime['month'])
 end
 
@@ -49,7 +57,7 @@ crime_three = JSON.parse(crime3)
 crime_three.each do |crime|
   Crime.create(latitude: crime['location']['latitude'],
               longitude: crime['location']['longitude'],
-              category: crime['category']['other-theft'],
+              category: crime['category'],
               date: crime['month'])
 end
 
@@ -59,7 +67,7 @@ manchester = JSON.parse(manchester_crime)
 manchester.each do |crime|
   Crime.create(latitude: crime['location']['latitude'],
               longitude: crime['location']['longitude'],
-              category: crime['category']['other-theft'],
+              category: crime['category'],
               date: crime['month'])
 end
 
@@ -69,7 +77,7 @@ manchester = JSON.parse(manchester_crime)
 manchester.each do |crime|
   Crime.create(latitude: crime['location']['latitude'],
               longitude: crime['location']['longitude'],
-              category: crime['category']['other-theft'],
+              category: crime['category'],
               date: crime['month'])
 end
 
@@ -78,7 +86,7 @@ nottingham = JSON.parse(nottingham_crime)
 nottingham.each do |crime|
   Crime.create(latitude: crime['location']['latitude'],
               longitude: crime['location']['longitude'],
-              category: crime['category']['other-theft'],
+              category: crime['category'],
               date: crime['month'])
 end
 
