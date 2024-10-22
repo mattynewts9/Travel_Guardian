@@ -9,7 +9,13 @@
   top: 0;
   z-index: 1000;
   transition: background 0.3s ease;
-  margin-bottom: 18px;
+}
+
+.navbar-brand a {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    gap: 14px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -66,12 +72,12 @@ a.nav-link-center:hover {
 
 .logo-text {
   display: inline-block;
-  font-family: 'Helvetica', sans-serif;
+  font-family: 'kanit';
   font-size: 24px;
-  color: #11302D; /* Same color as nav links */
+  color: #2b5058; /* Same color as nav links */
   margin-left: 10px;
-  font-weight: bold;
   letter-spacing: 1px;
+  margin-left: -2px;
 }
 
 @media (max-width: 768px) {

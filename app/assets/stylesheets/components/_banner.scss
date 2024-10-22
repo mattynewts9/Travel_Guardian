@@ -2,22 +2,20 @@
   height: 300px;
   display: flex;
   justify-content: center;
-
   margin: 0 auto;
 }
 
-
+.form-container form {
+  position: relative;
+}
 .form-search-container {
   text-align: left;
   background-color: rgba(255, 255, 255, 58%);
   padding: 10px;
   border-radius: 40px;
-
-
   width: 550px;
   border: 3px solid rgba(0, 0, 0, 0.672);
   margin-left: 10px;
-
 }
 
 .tag-line {
@@ -25,11 +23,9 @@
   margin-bottom: 30px;
   margin-top: 80px;
   margin-left: 25px;
-
   font-size: 32px;
   letter-spacing: 1px;
   font-family: Arial, Helvetica, sans-serif;
-
 }
 
 .tag-2 {
@@ -41,10 +37,9 @@
 }
 
 .search-icon {
+  position: absolute;
   height: 30px;
   width: 30px;
-  position: absolute;
-  top: 157px;
-  right: 631px;
-
+  top: 9px;
+  right: -35px;
 }
