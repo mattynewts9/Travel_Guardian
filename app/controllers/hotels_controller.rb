@@ -38,5 +38,8 @@ class HotelsController < ApplicationController
     @hotel = Hotel.find(params[:id])
     @reports = @hotel.reports.includes(:user) # Load reviews for the hotel
     @report = Report.new # Initialize a new review for the form
+    @crimes = Crime.near([@hotel.latitude,@hotel.longitude], 20)
+    @categories = Crime.where.not(category: nil).distinct.pluck(:category)
+    #@crime = crime.near([@hotel.category], 3)
   end
 end
