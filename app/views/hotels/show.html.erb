@@ -1,29 +1,24 @@
-<h1 class="hotel-name text-center"><%= @hotel.name %></h1>
+<div class="container mt-5">
+  <div class="hotel-details mb-4">
+    <h1 class="mb-3"><%= @hotel.name %></h1>
 
-<h2 class="reports-title">Reports:</h2>
-
-<h3 class="add-report-title">Add a Report:</h3>
-<p class="crime-info text-center" style="font-size: 0.9em; color: gray;">(Please include information relevant to crime issues)</p> <!-- Instruction placed below the title -->
-
-<div class="form-container">
-  <%= form_with model: [@hotel, @report], local: true, html: { class: 'report-form', id: 'reportForm' } do |f| %>
-    <div class="form-group">
-      <%= f.label :content, 'Your Report (Crime-related information only)', class: 'form-label' %>
-      <%= f.text_area :content, placeholder: "Enter your crime-related report here...", rows: 10, class: 'form-control report-text-area' %>
+    <div class="hotel-image mb-3">
+      <%= image_tag @hotel.image, alt: @hotel.name, class: "img-fluid" %>
     </div>
 
-    <div class="form-group">
-      <%= f.label :safety_rating, 'Safety Rating (1-5)', class: 'form-label' %>
-      <%= f.select :safety_rating, options_for_select((1..5).map { |n| [n, n] }), class: 'form-control' %>
+    <p><strong>Crime Rating:</strong> <%= @hotel.crime_rating %></p>
+
+    <p><strong>Location:</strong> <%= @hotel.address %></p>
+
+    <p><strong>Crime Categories:</strong>
+    </p>
+
+    <div class="favourites-section mb-4">
+      <%= button_to "Add to Favorites", hotel_favourites_path(@hotel), method: :post, class: "btn btn-success" %>
     </div>
 
-    <div class="form-actions">
-      <%= f.submit 'Submit Report', class: 'submit-button btn btn-primary btn-lg' %>
-      <button type="button" class="clear-button btn btn-secondary btn-lg" onclick="clearForm()">Clear</button> <!-- Clear button -->
+    <div class="report-section">
+      <p>If you’ve witnessed a crime, <%= link_to "Report a Crime", hotel_reportform_path(@hotel), class: "btn btn-danger" %></p>
     </div>
-  <% end %>
+  </div>
 </div>
-
-<%= simple_form_for [@hotel, @favourite] do |f| %>
-  <%= f.submit "Submit favourite", class: "btn btn-primary" %>
-<% end %>

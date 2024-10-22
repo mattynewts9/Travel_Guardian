@@ -12,3 +12,11 @@ class Hotel < ApplicationRecord
                     tsearch: { prefix: true }
                   }
 end
+class Hotel < ApplicationRecord
+  has_many :crimes # Assuming a hotel can have many crimes associated with it
+
+  # Define a method to get unique crime categories for the hotel
+  def crime_categories
+    crimes.select(:category).distinct.pluck(:category)
+  end
+end
