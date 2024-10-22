@@ -1,9 +1,9 @@
 .map-container {
   display: flex;
-  margin-right: 10px;
-  margin-top: 10px;
+  height: 500px;
   border-radius: 10px;
-  justify-content: space-around;
+  justify-content: space-between;
+  gap: 20px;
 }
 
 
@@ -20,13 +20,15 @@
 }
 
 .table-container {
-  width: 47%;
-  height: 285px;
+  width: 50%;
+  height: 421px;
   font-family: 'Kanit';
   text-align: center;
+  table-layout: fixed;
 
     th{
       font-weight: 500;
+      height: 18px;
     }
 
     td {
