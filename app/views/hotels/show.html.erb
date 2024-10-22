@@ -5,14 +5,14 @@
     <div class="hotel-image mb-3">
       <%= image_tag @hotel.image, alt: @hotel.name, class: "img-fluid" %>
     </div>
+    <div class="hotel-details-info">
+      <p>Crime Rating: <span><%= @hotel.crime_rating %></span></p>
 
-    <p><strong>Crime Rating:</strong> <%= @hotel.crime_rating %></p>
+      <p>Location: <%= @hotel.address %></p>
 
-    <p><strong>Location:</strong> <%= @hotel.address %></p>
-
-    <p><strong>Crime Categories:</strong>
-    </p>
-
+      <p>Crime Categories:
+      </p>
+    </div>
     <div class="favourites-section mb-4">
       <%= button_to "Add to Favorites", hotel_favourites_path(@hotel), method: :post, class: "btn btn-success" %>
     </div>

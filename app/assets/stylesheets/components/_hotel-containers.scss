@@ -1,11 +1,10 @@
 .container {
   margin-top: 200px;
   margin-bottom: 200px;
-
-
 }
 
 .card-product-container {
+  font-family: "kanit";
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
@@ -25,9 +24,9 @@
   border: 3px solid #2b5058;
 }
 
-.card-product .img {
+.card-product img {
   max-height: 250px;
-  width: 100%;
+  width: 60%;
   object-fit: cover;
 }
 
@@ -51,9 +50,12 @@
   margin-left: 6px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 
   h3 {
-    font-size: 1.50rem;
+    font-size: 21px;
+    font-weight: light;
+    font-family: "kanit";
   }
 
   h6 {
@@ -66,7 +68,15 @@
   }
 }
 
-.btn {
+.crime-btn {
+  font-family: "kanit";
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  width: 100%;
   margin-top: 4px;
+  padding: 8px 19px;
   border-radius: 5px;
+  font-size: 1rem;
+  background-color:#2b5058;
 }

@@ -42,14 +42,14 @@
   <div class="card-product-container">
     <% @hotels.each do |hotel| %>
       <div class="card-product">
-        <div class="img">
-          <%= image_tag hotel.image %>
-        </div>
+        <%= image_tag hotel.image %>
         <div class="card-product-info">
-          <h3><%= hotel.name %></h3>
-          <p><%= hotel.address %></p>
+          <div class="title-info">
+            <h3><%= hotel.name %></h3>
+            <p><%= hotel.address %></p>
+          </div>
           <h6>Crime Rating : <span><%= hotel.crime_rating %></span></h6>
-          <%= link_to "View crime rates!", hotel_path(hotel), class: "btn btn-primary btn-font-white" %>
+          <%= link_to "View crime rates!", hotel_path(hotel), class: "crime-btn" %>
         </div>
       </div>
     <% end %>
