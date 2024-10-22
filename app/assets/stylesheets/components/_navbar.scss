@@ -1,34 +1,85 @@
 .navbar-lewagon {
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-  background: white;
-  margin-bottom: 14px;
+  background: #ffffff; /* Clean white background */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  padding: 10px 20px; /* Adjusted padding for sleek look */
+  position: sticky; /* Navbar stays at the top */
+  top: 0;
+  z-index: 1000;
+  transition: background 0.3s ease;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
-  margin-right: 10px;
+  margin-right: 20px;
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 50px; /* Slightly larger logo */
   margin-left: 10px;
 }
 
 .container-site-links {
-  margin-right: 195px;
+  display: flex;
+  align-items: center;
+  margin-right: 50px; /* Adjusted margin for balance */
 }
 
 a.nav-link-center {
   text-decoration: none;
-  color: rgb(17, 48, 45);
+  color: #11302D; /* Darker, elegant color for travel theme */
   letter-spacing: 1px;
-  margin: 50px;
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0 20px; /* Reduced margin for streamlined spacing */
+  font-family: 'Arial', sans-serif;
+  font-weight: 600; /* Bolder font for visibility */
+  position: relative;
+  transition: color 0.3s ease;
+}
 
+/* Hover effect with underline animation */
+a.nav-link-center::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  background: #11302D; /* Same color as text */
+  transition: width 0.3s ease;
+  bottom: -5px;
+  left: 0;
+}
 
+a.nav-link-center:hover::after {
+  width: 100%; /* Expands underline on hover */
+}
 
+a.nav-link-center:hover {
+  color: #00a99d; /* Change color on hover for travel feel */
 }
 
 .logo-text {
-  display: inline;
+  display: inline-block;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 24px;
+  color: #11302D; /* Same color as nav links */
+  margin-left: 10px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .navbar-lewagon {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .container-site-links {
+    margin-right: 0;
+  }
+
+  a.nav-link-center {
+    margin: 10px 0; /* Adjust for mobile */
+  }
 }

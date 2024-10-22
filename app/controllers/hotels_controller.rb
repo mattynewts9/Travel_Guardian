@@ -37,6 +37,7 @@ class HotelsController < ApplicationController
   end
 
   def show
+    @favourite = Favourite.new
     @hotel = Hotel.find(params[:id])
     @reports = @hotel.reports.includes(:user) # Load reviews for the hotel
     @report = Report.new # Initialize a new review for the form

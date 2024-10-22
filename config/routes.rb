@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   # Hotels routes, including nested reviews routes
   resources :hotels, only: [:index, :show] do
     resources :reports, only: [:index, :create]
+    resources :favourites, only: :create
   end
+
+  resources :favourites, only: [ :index, :destroy ]
+
   # Emergency contacts route
   get "emergency_contacts/index"
   get 'emergency_contacts', to: 'emergency_contacts#index'
