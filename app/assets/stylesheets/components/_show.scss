@@ -1,12 +1,35 @@
 // Styling for the hotel details, favorites, and report sections
-.hotel-details,
-.favourites-section,
-.report-section {
+.hotel-details {
+  border: 3px solid #2b5058;
   margin-bottom: 3rem; // Add consistent spacing between sections
   padding: 1.5rem; // Give sections some padding for better layout
   background-color: #f8f9fa; // Light background for section contrast
   border-radius: 0.5rem; // Smooth corners for modern look
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); // Soft shadow for depth
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "kanit";
+
+  p:first-child {
+    color: red;
+    font-weight: 500;
+
+  }
+  img {
+    border-radius: 10px;
+  }
+}
+
+.hotel-details span {
+  color: #2b5058;
+}
+
+.hotel-details-info {
+  text-align: left;
+  text-align: left;
+  width: 87%;
 }
 
 .hotel-details h1 {
@@ -27,12 +50,17 @@
 }
 
 .btn-success {
-  background-color: #28a745; // Bootstrap green
+  background-color: #2b5058; // Bootstrap green
   border: none; // Remove border
+  color: white;
+  font-family: "kanit";
+  width: 385px;
 }
 
+
 .btn-success:hover {
-  background-color: #218838; // Darker green on hover
+  background-color: #2b5058ac;
+  color: rgb(255, 255, 255);
 }
 
 .btn-danger {

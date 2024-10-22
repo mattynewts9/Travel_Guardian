@@ -1,5 +1,5 @@
-<%= link_to "Return to search", root_path, class: "return-button"%>
-
+<div class="hotel-body-container">
+  <%= link_to "Return to search", root_path, class: "return-button"%>
 
 <div class="container-crime">
   <h3>Based on your search... here is what we found</h3>
@@ -14,45 +14,44 @@
       <% end %>
     <h3>
 </div>
+  <div class="map-container">
+    <table class="table-container">
+      <tr>
+        <th><%=%> Crimes within the area of <%= params[:search].capitalize %></th>
+        <th>Crime Count</th>
+      </tr>
+      <tr>
+        <% @crimes.group_by(&:category).each do |category, crimes_in_category| %>
+      <tr>
+        <td><%= category.capitalize %></td>
+        <td><%= crimes_in_category.count %></td>
+      </tr>
+        <% end %>
+    </table>
 
-<div class="map-container">
-  <table class="table-container">
-    <tr>
-      <th><%=%> Crimes within the area of <%= params[:search].capitalize %></th>
-      <th>Crime Count</th>
-    </tr>
-    <tr>
-      <% @crimes.group_by(&:category).each do |category, crimes_in_category| %>
-    <tr>
-      <td><%= category.capitalize %></td>
-      <td><%= crimes_in_category.count %></td>
-    </tr>
-      <% end %>
-  </table>
-
-  <div class="mapbox" style="width: 50%; height: 100%;"
-    data-controller="map"
-    data-map-hotel-markers-value="<%= @hotel_markers.to_json %>"
-    data-map-crime-markers-value="<%= @crime_markers.to_json %>"
-    data-map-hotel-icon-url-value="<%= asset_path('hotel-icon.png') %>"
-    data-map-crime-icon-url-value="<%= asset_path('spyware.png') %>"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
-</div>
-
-
-<div class="card-product-container">
-  <% @hotels.each do |hotel| %>
-    <div class="card-product">
-      <div class="img">
-        <%= image_tag hotel.image %>
-      </div>
-      <div class="card-product-info">
-        <h3><%= hotel.name %></h3>
-        <p><%= hotel.address %></p>
-        <h5><%= hotel.crime_rating %></h5>
-        <%= link_to "View crime rates!", hotel_path(hotel), class: "btn btn-primary btn-font-white" %>
-      </div>
+    <div class="mapbox" style="width: 50%; height: 100%;"
+      data-controller="map"
+      data-map-hotel-markers-value="<%= @hotel_markers.to_json %>"
+      data-map-crime-markers-value="<%= @crime_markers.to_json %>"
+      data-map-hotel-icon-url-value="<%= asset_path('hotel-icon.png') %>"
+      data-map-crime-icon-url-value="<%= asset_path('spyware.png') %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
-  <% end %>
+  </div>
+
+  <div class="card-product-container">
+    <% @hotels.each do |hotel| %>
+      <div class="card-product">
+        <%= image_tag hotel.image %>
+        <div class="card-product-info">
+          <div class="title-info">
+            <h3><%= hotel.name %></h3>
+            <p><%= hotel.address %></p>
+          </div>
+          <h6>Crime Rating : <span><%= hotel.crime_rating %></span></h6>
+          <%= link_to "View crime rates!", hotel_path(hotel), class: "crime-btn" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
