@@ -7,7 +7,7 @@
       <%= form_tag hotels_path, method: :get do %>
         <%= text_field_tag :search, params[:search], class:"form-search-container" %>
         <%= label_tag :search, "" %>
-        <%= submit_tag "Search" %>
+        <%= image_submit_tag('magnifying-glass-solid.svg', class:"search-icon") %>
       <% end %>
     </div>
   </div>
@@ -16,9 +16,9 @@
 
 
 
-<div class="container">
-    <div class="card-header"><h2>Why Travel Guardian?</h2></div>
-    <div class="container d-flex justify-content-between align-items-center py-3">
+
+    <h2 class="card-header">Why Travel Guardian?</h2>
+    <div class="index-card-container d-flex justify-content-between align-items-center py-3">
       <div class="card-category">
         <div class="card-category-icon end-50"><%= image_tag "man-with-case.png" %></div>
           <h3>Travel safe</h3>
@@ -38,7 +38,7 @@
             and most importantly check your area safety so you can make an informed decision before committing to book your hotel.</p>
         </div>
     </div>
-</div>
+
 
 <div class="container">
     <div class="card-header-reports"><h2>Travel Guardian Community Reports!</h2></div>
