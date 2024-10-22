@@ -25,24 +25,21 @@
   font-family: 'Kanit';
   text-align: center;
 
-    thead, tbody, tfoot, tr, td, th
-    {
-    width: 1px;
-    border-color: inherit;
-    border-style: solid;
-    border-width: 1px;
+    th{
+      font-weight: 500;
     }
 
     td {
+      font-weight: 200;
       width:15px;
       text-align: center;
       height: 10px;
+      padding: 12px;
+
     }
 }
 
-.table-container {
-  width: 47%;
-  height: 285px;
-  font-family: 'Kanit';
-  text-align: center;
-}
+.table-container tr:nth-child(even)
+    {
+      background-color: #a0a0a08f;
+    }
