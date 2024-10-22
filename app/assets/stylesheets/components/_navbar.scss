@@ -2,12 +2,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #ffffff; /* Clean white background */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  padding: 10px 20px; /* Adjusted padding for sleek look */
-  position: sticky; /* Navbar stays at the top */
+  background-color: #fff;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  position: sticky;
   top: 0;
   z-index: 1000;
+
   transition: background 0.3s ease;
 }
 
@@ -21,53 +22,58 @@
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
   margin-right: 20px;
+
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 50px; /* Slightly larger logo */
+  width: 60px;
   margin-left: 10px;
 }
 
 .burger-icon {
   width: 30px;
   height: 30px;
+  cursor: pointer;
 }
 .container-site-links {
   display: flex;
   align-items: center;
-  margin-right: 50px; /* Adjusted margin for balance */
+  margin-right: 50px;
 }
 
-a.nav-link-center {
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+  margin-right: 10px;
+}
+
+.navbar-lewagon a.nav-link-center {
   text-decoration: none;
-  color: #11302D; /* Darker, elegant color for travel theme */
+  color: #11302d;
   letter-spacing: 1px;
-  margin: 0 20px; /* Reduced margin for streamlined spacing */
-  font-family: 'Arial', sans-serif;
-  font-weight: 600; /* Bolder font for visibility */
+  margin: 0 20px;
+  font-family: Arial, sans-serif;
+  font-weight: 600;
   position: relative;
   transition: color 0.3s ease;
 }
 
-/* Hover effect with underline animation */
-a.nav-link-center::after {
+.navbar-lewagon a.nav-link-center::after {
   content: "";
   position: absolute;
   width: 0;
   height: 2px;
-  display: block;
-  background: #11302D; /* Same color as text */
-  transition: width 0.3s ease;
+  background-color: #11302d;
   bottom: -5px;
   left: 0;
+  transition: width 0.3s ease;
 }
 
-a.nav-link-center:hover::after {
-  width: 100%; /* Expands underline on hover */
+.navbar-lewagon a.nav-link-center:hover::after {
+  width: 100%;
 }
 
-a.nav-link-center:hover {
-  color: #00a99d; /* Change color on hover for travel feel */
+.navbar-lewagon a.nav-link-center:hover {
+  color: #00a99d;
 }
 
 .logo-text {
@@ -80,17 +86,17 @@ a.nav-link-center:hover {
   margin-left: -2px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .navbar-lewagon {
     flex-direction: column;
     padding: 15px;
   }
 
-  .container-site-links {
+  .navbar-lewagon .container-site-links {
     margin-right: 0;
   }
 
-  a.nav-link-center {
-    margin: 10px 0; /* Adjust for mobile */
+  .navbar-lewagon a.nav-link-center {
+    margin: 10px 0;
   }
 }
