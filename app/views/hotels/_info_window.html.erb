@@ -1,5 +1,12 @@
 <div class="info">
-<h2><%= hotel.name %></h2>
-<p><%= image_tag hotel.image, class: "info-image" %></p>
-<p><%= hotel.address %></p>
+  <div class="pop-up-image-container">
+    <%= image_tag hotel.image, class: "info-image" %>
+  </div>
+  <div class="hotel-content">
+    <h5 class="popup-title"><%= hotel.name %></h5>
+    <p><%= hotel.address %></p>
+      <div class="link-button">
+        <%= link_to "More info", hotel_path(hotel) %>
+      </div>
+  </div>
 </div>

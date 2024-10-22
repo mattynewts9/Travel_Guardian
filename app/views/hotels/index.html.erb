@@ -1,38 +1,38 @@
+<<<<<<< HEAD
+<%= link_to "Return to search", root_path, class: "return-button"%>
+
+=======
+>>>>>>> master
 <div class="container-crime">
-  <h3 class="search-results">Based on your search... here is what we found</h3>
-  <div class="d-flex">
-    <h3 class="rating-text">This area has an average safety rating of:</h3>
-    <% total_crime_rating = @hotels.sum(:crime_rating) %>
-    <% average_crime_rating = total_crime_rating / @hotels.size %>
-    <h3 class="average-crime-number"><%= average_crime_rating %></h3>
-  </div>
-
-
+  <h3>Based on your search... here is what we found</h3>
+    <h3 class="rating-text">This area has an average safety rating of:
+      <% total_crime_rating = @hotels.sum(:crime_rating) %>
+      <% average_crime_rating = total_crime_rating / @hotels.size %>
+      <%= average_crime_rating.to_i %>
+      <% if average_crime_rating.to_i < 3.5 %>
+        <span style="color: red">BAD</span> <%= image_tag "thumb-down.png" %>
+      <% else %>
+        <span style="color: green">GOOD</span> <%= image_tag "check.png" %>
+      <% end %>
+    <h3>
+</div>
 
 <div class="map-container">
-  <table class="d">
-  <tr>
-    <th><%=%> Crimes within the area of <%= params[:search] %></th>
-    <th>Contact</th>
-    <th>Country</th>
-  </tr>
-  <tr>
-    <td><%= @categories %></td>
-    <td><%= @dates %></td>
-    <td>Germany</td>
-  </tr>
-  <tr>
-    <td>Island Trading</td>
-    <td>Helen Bennett</td>
-    <td>UK</td>
-  </tr>
-  <tr>
-    <td>Magazzini Alimentari Riuniti</td>
-    <td>Giovanni Rovelli</td>
-    <td>Italy</td>
-  </tr>
-</table>
-  <div class="mapbox" style="width: 50%; height: 400px;"
+  <table class="table-container">
+    <tr>
+      <th><%=%> Crimes within the area of <%= params[:search].capitalize %></th>
+      <th>Crime Count</th>
+    </tr>
+    <tr>
+      <% @crimes.group_by(&:category).each do |category, crimes_in_category| %>
+    <tr>
+      <td><%= category.capitalize %></td>
+      <td><%= crimes_in_category.count %></td>
+    </tr>
+      <% end %>
+  </table>
+
+  <div class="mapbox" style="width: 50%; height: 100%;"
     data-controller="map"
     data-map-hotel-markers-value="<%= @hotel_markers.to_json %>"
     data-map-crime-markers-value="<%= @crime_markers.to_json %>"
@@ -41,7 +41,7 @@
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
-</div>
+
 
 
 <div class="card-product-container">

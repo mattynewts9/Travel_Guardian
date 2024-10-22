@@ -1,32 +1,48 @@
 .container-crime {
   justify-content: center;
-  margin-top: 50px;
-  
+  margin-top: 31px;
+  width: 765px;
+  font-family: "kanit";
+  margin-bottom: 43px;
+
+  h3 {
+    font-family: "kanit";
+    font-weight: 300;
+  }
+
+  h3:first-child {
+    font-size: 19px;
+    margin-bottom: 41px;
+  }
+
+  img {
+    height: 38px;
+    margin-bottom: 7px;
+  }
+
+  span {
+    font-weight: 400;
+  }
+}
+
+.return-button {
+  padding: 10px 20px;
+  background: #2b5058;
+  text-decoration: none;
+  border-radius: 6px;
+  color: white
+
 
 }
 
-.map-container {
-  height: 300px;
-}
 
-.search-results {
-  font-family: Arial, Helvetica, sans-serif;
-  margin-left: 123px;
-  font-size: 20px;
-}
 
-.rating-text {
-  margin-top: 10px;
-  font-family: Arial, Helvetica, sans-serif;
-  margin-left: 123px;
-  font-size: 30px;
-}
 
-.average-crime-number {
-  margin-top: 10px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  margin-left: 10px;
-  font-size: 30px;
-  color: green;
-  font-weight: bold;
-}
+// .average-crime-number {
+//   margin-top: 10px;
+//   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+//   margin-left: 10px;
+//   font-size: 30px;
+//   color: green;
+//   font-weight: bold;
+// }
