@@ -8,20 +8,23 @@
 
 .fav-header {
   text-align: center;
-  font-family: "kanit";
+  font-family: sans-serif;
   padding: 80px;
   color: rgb(34, 62, 68);
+  font-weight: bold;
 
 }
 
 
 
 .hotel-name {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: sans-serif;
   font-size: 18px;
+  font-weight: bolder;
   }
 
 .card-fav {
+  border-radius: 0.5rem;
   border: 3px, solid rgb(43, 80, 88);
   overflow: hidden;
   background: white;
@@ -78,4 +81,7 @@
 
 .crime-rating {
   font-size: 14px;
+  font-weight: bold;
+  color: rgb(34, 62, 68);
+
 }
