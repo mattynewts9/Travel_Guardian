@@ -1,31 +1,35 @@
-<div class="hotel-container-show">
-  <div class="hotel-details">
-    <div class="hotel-title">
+<div class="hotel-content-container">
+  <div class="hotel-container-show">
+    <div class="hotel-details">
       <h1 class=""><%= @hotel.name %></h1>
-    </div>
-    <div class="hotel-content">
-      <%= image_tag @hotel.image, alt: @hotel.name, class: "img-fluid" %>
-    <div class="hotel-details-info">
-      <p>Crime Rating: <span><%= @hotel.crime_rating %></span></p>
+      <div class="hotel-content-items">
+        <div class="hotel-title-img">
+          <%= image_tag @hotel.image, alt: @hotel.name, class: "img-fluid" %>
+          <div class="hotel-details-info">
+            <p><%= @hotel.address %></p>
 
-      <p>Location: <%= @hotel.address %></p>
+            <p>Crime Rating: <span><%= @hotel.crime_rating %></span></p>
 
-      <p>Crime Categories:
-      </p>
-    </div>
-    <div class="favourites-section">
-      <%= button_to "Add to Favorites", hotel_favourites_path(@hotel), method: :post, class: "btn btn-success" %>
-    </div>
-
-    <div class="report-section">
-      <p>If you’ve witnessed a crime, <%= link_to "Report a Crime", hotel_reportform_path(@hotel), class: "btn btn-danger" %></p>
-
-    </div>
+            <p>Crime Categories:
+            </p>
+          </div>
+        </div>
+            <div class="btn-container">
+                <%= button_to "Add to Favorites", hotel_favourites_path(@hotel), method: :post, class: "btn btn-success" %>
+                <div><p>If you’ve witnessed a crime,</p> <%= link_to "Report a Crime", hotel_reportform_path(@hotel), class: "btn btn-danger" %></div>
+            </div>
+      </div>
+      </div>
   </div>
-  </div>
-</div>
-<div class="reports-container">
-  <% @reports.each do |report| %>
-    <%= report %>
-    <% end %>
+
+
+      <div class="reports-container">
+        <h1>Reports</h1>
+        <div class="reports-content-container">
+        <% @reports.each do |report| %>
+          <%= report.comment %>
+          <%= report.safety_rating %>
+          <% end %>
+          </div>
+      </div>
 </div>
