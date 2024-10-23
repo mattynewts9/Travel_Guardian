@@ -157,14 +157,6 @@ Hotel.create(
 )
 
 Hotel.create(
-  name: "Manchester Piccadilly Hotel",
-  address: "91 London Rd, Manchester M1 2PG",
-  crime_rating: 4.0,
-  image: "https://images.trvl-media.com/lodging/1000000/40000/34400/34337/3b556711.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill",
-  user: freddy
-)
-
-Hotel.create(
   name: "The Lowry Hotel",
   address: "50 Dearmans Pl, Salford, Manchester M3 5LH",
   crime_rating: 4.5,
