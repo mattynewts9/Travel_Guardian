@@ -24,9 +24,9 @@
         </div>
 
         <div class="form-actions d-flex justify-content-between mt-4">
-          <%= f.submit 'Leave Report', class: 'submit-button btn btn-primary btn-lg' %>
-          <button type="button" class="clear-button btn btn-secondary btn-lg" onclick="clearForm()">Clear</button>
-          <%= link_to 'Back', request.referrer || hotels_path, class: 'btn btn-outline-secondary btn-lg' %>
+          <%= f.submit 'Add Report', class: 'submit-btn' %>
+          <button type="button" class="clear-btn" onclick="clearForm()">Clear</button>
+          <%= link_to 'Back', request.referrer || hotels_path, class: 'back-btn' %>
         </div>
       <% end %>
     </div>

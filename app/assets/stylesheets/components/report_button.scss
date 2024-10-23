@@ -1,0 +1,54 @@
+.form-actions {
+  justify-content: space-between;
+}
+
+
+
+.clear-btn {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: rgb(7, 71, 90);
+  transition: background 0.3s ease;
+  width: 204px;
+  height: 45px;
+  text-align: center;
+}
+
+.submit-btn {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: rgb(7, 71, 90);
+  transition: background 0.3s ease;
+  width: 204px;
+  height: 45px;
+  text-align: center;
+}
+
+.back-btn {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: rgb(7, 71, 90);
+  transition: background 0.3s ease;
+  text-decoration: none;
+  width: 204px;
+  height: 45px;
+  text-align: center;
+}
+
+.back-btn:hover {
+  background: #3485aa;
+  color: white;
+}
+
+.submit-btn:hover {
+  background: #3485aa;
+  color: white;
+}
+
+.clear-btn:hover {
+  background: #3485aa;
+  color: white;
+}
