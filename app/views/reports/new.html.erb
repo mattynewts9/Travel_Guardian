@@ -14,8 +14,8 @@
     <div class="form-container mt-4">
       <%= form_with model: [@hotel, @report], local: true, html: { class: 'report-form', id: 'reportForm' } do |f| %>
         <div class="form-group">
-          <%= f.label :content, 'Your Report (Crime-related information only)', class: 'form-label' %>
-          <%= f.text_area :content, placeholder: "Enter your crime-related report here...", rows: 5, class: 'form-control report-text-area' %>
+          <%= f.label :comment, 'Your Report (Crime-related information only)', class: 'form-label' %>
+          <%= f.text_area :comment, placeholder: "Enter your crime-related report here...", rows: 5, class: 'form-control report-text-area' %>
         </div>
 
         <div class="form-group">
@@ -24,7 +24,7 @@
         </div>
 
         <div class="form-actions d-flex justify-content-between mt-4">
-          <%= f.submit 'Submit Report', class: 'submit-button btn btn-primary btn-lg' %>
+          <%= f.submit 'Leave Report', class: 'submit-button btn btn-primary btn-lg' %>
           <button type="button" class="clear-button btn btn-secondary btn-lg" onclick="clearForm()">Clear</button>
           <%= link_to 'Back', request.referrer || hotels_path, class: 'btn btn-outline-secondary btn-lg' %>
         </div>

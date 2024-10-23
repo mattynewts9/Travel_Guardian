@@ -4,6 +4,7 @@ class Hotel < ApplicationRecord
 
   belongs_to :user
   has_many :reports
+  has_many :favourites, dependent: :destroy
 
   include PgSearch::Model
   pg_search_scope :search_by_name_and_address,

@@ -2,10 +2,10 @@ class Report < ApplicationRecord
   belongs_to :hotel
   belongs_to :user
 
-  validates :content, presence: true
+  validates :comment, presence: true
   validates :safety_rating, presence: true, inclusion: { in: 1..5 }
 
-  validate :content_must_be_crime_related
+  # validate :content_must_be_crime_related
 
   private
 

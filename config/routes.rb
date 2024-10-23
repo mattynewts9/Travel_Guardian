@@ -4,8 +4,7 @@ Rails.application.routes.draw do
 
   # Hotels routes, including nested reviews routes
   resources :hotels, only: [:index, :show] do
-    resources :reports, only: [:index, :create]
-    get 'reportform', to: 'pages#reportform', as: 'reportform'
+    resources :reports, only: [:index, :new, :create]
     resources :favourites, only: :create
   end
 
