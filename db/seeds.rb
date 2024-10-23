@@ -144,8 +144,6 @@ claridges= Hotel.create(
 
 puts "Creating fake reports.."
 
-
-
 [savoy, ritz, claridges ].each do |hotel|
   5.times do
     Report.create!(
