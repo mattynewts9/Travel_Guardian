@@ -90,9 +90,33 @@ nottingham.each do |crime|
               date: crime['month'])
 end
 
-freddy = User.create(email: "freddy@123.com", password: "123123")
-paul = User.create(email: "paul@123.com", password: "123123")
-john = User.create(email: "john@123.com", password: "123123")
+more_london_crime = RestClient.get('https://data.police.uk/api/crimes-at-location?date=2024-02&lat=53.4756&lng=-2.2506')
+london_crime_more = JSON.parse(more_london_crime)
+london_crime_more.each do |crime|
+  Crime.create(latitude: crime['location']['latitude'],
+              longitude: crime['location']['longitude'],
+              category: crime['category'],
+              date: crime['month'])
+end
+
+# mores_london_crime = RestClient.get('https://data.police.uk/api/crimes-at-location?date=2024-02&lat=&lng=-2.2506')
+# london_crime_moress = JSON.parse(more_london_crimes)
+# london_crime_moress.each do |crime|
+#   Crime.create(latitude: crime['location']['latitude'],
+#               longitude: crime['location']['longitude'],
+#               category: crime['category'],
+#               date: crime['month'])
+# end
+
+
+
+
+freddy = User.create(email: "freddy@123.com", password: "123123", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHGth1GpE34QEwBpZiVsYlDs_wmprjG0WuGA&s")
+paul = User.create(email: "paul@123.com", password: "123123", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvi7HpQ-_PMSMOFrj1hwjp6LDcI-jm3Ro0Xw&s")
+john = User.create(email: "john@123.com", password: "123123", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUaHK8aWxPF92QMJwhgPA5KHwyBmpf5VOLpw&s")
+mac = User.create(email: "mac@123.com", password: "123123", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo0Rd8IZxd0JNv3SkUSqxiYd9_Pa_-bTGS_A&s")
+matty = User.create(email: "matty@123.com", password: "123123", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkQY77eP40wItgCJ89uDS1OzviJqyERLJQk_MJpXMj_6bg4UyUWsLWZmH0T7fYQHsFtEs&usqp=CAU")
+anil = User.create(email: "anil@123.com", password: "123123", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM2eLAUZl1zbeDEEe3g_EfCr4sAvt4jhKqA-CZjAhMD7bYpfJ5nXphCa6QYC3yiq8yHyk&usqp=CAU")
 
 puts "Creating hotels..."
 
@@ -120,39 +144,86 @@ Hotel.create(
   image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTA3FWUclKOASizlAbnXj0hokE_Um7835LQwg&s",
   user: freddy)
 
-savoy= Hotel.create(
+savoy = Hotel.create(
   name: "The Savoy",
   address: "Strand, London WC2R 0EZ",
   crime_rating: 4.5,
   image: "https://www.livingnorth.com/images/media/articles/life-and-style/travel/The%20Savoy/Savoy%201.jpg?",
   user: freddy)
 
-ritz= Hotel.create(
+ritz = Hotel.create(
   name: "The Ritz London",
   address: "150 Piccadilly, London W1J 9BR",
   crime_rating: 4.7,
   image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2c/09/b6/ea/the-ritz-london-exterior.jpg?w=700&h=-1&s=1",
   user: paul
 )
-claridges= Hotel.create(
+claridges = Hotel.create(
   name: "Claridge's",
   address: "Brook St, London W1K 4HR",
   crime_rating: 4.6,
   image: "https://www.claridges.co.uk/globalassets/claridges.jpg",
-  user: john
+  user: anil
+)
+
+corinthia_london = Hotel.create(
+  name: "Corinthia London",
+  address: "Whitehall Pl, London SW1A 2BD",
+  crime_rating: 4.0,
+  image: "https://lh5.googleusercontent.com/p/AF1QipP_uY10v9kXsLC5L75rTqmCLUwe3XaBBHQwXUWA=w253-h168-k-no",
+  user: matty
+)
+
+nox_kensington = Hotel.create(
+  name: "NOX Kensington",
+  address: "88 Holland Rd, London W14 8BN",
+  crime_rating: 4.0,
+  image: "https://lh3.googleusercontent.com/p/AF1QipOjXkZ5yNP0iPbqRprZtutHpFav-B7vt_ti0PfY=s1360-w1360-h1020",
+  user: mac
 )
 
 puts "Creating fake reports.."
 
-[savoy, ritz, claridges ].each do |hotel|
-  5.times do
-    Report.create!(
-      comment: Faker::Lorem.paragraph(sentence_count: 3),
-      safety_rating: rand(1..5),
-      hotel: hotel,
-      user: User.order('RANDOM()').first # Assign a random user to the review
-    )
-  end
-end
+Report.create(
+    comment:  "It was a super safe area! Would recommend.",
+    safety_rating: 5,
+    hotel: savoy,
+    user: john
+)
 
+Report.create(
+  comment:  "Area had some issues with shoplifting, make sure you stay aware",
+  safety_rating: 3,
+  hotel: savoy,
+  user: paul
+)
+
+Report.create(
+  comment:  "Felt safe during the day and late at night!",
+  safety_rating: 4,
+  hotel: savoy,
+  user: freddy
+)
+
+Report.create(
+  comment:  "Great area, although a few dogdy people were roaming the streets at night",
+  safety_rating: 3,
+  hotel: savoy,
+  user: mac
+)
+
+Report.create(
+  comment:  "Super safe area, locals are friendly and respectful",
+  safety_rating: 5,
+  hotel: claridges,
+  user: matty
+)
+
+
+Report.create(
+  comment:  "Great Hotel and didn't have any issues and felt safe at all times",
+  safety_rating: 5,
+  hotel: claridges,
+  user: anil
+)
 puts "Done!"
