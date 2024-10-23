@@ -6,11 +6,9 @@
   background-color: #f8f9fa; // Light background for section contrast
   border-radius: 0.5rem; // Smooth corners for modern look
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); // Soft shadow for depth
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
   font-family: "kanit";
+  height: 400px;
 
   p:first-child {
     color: red;
@@ -19,6 +17,7 @@
   }
   img {
     border-radius: 10px;
+    width: 26%;
   }
 }
 
@@ -26,18 +25,30 @@
   color: #2b5058;
 }
 
-.hotel-details-info {
-  text-align: left;
-  text-align: left;
-  width: 87%;
-}
+// .hotel-details-info {
+// }
 
 .hotel-details h1 {
   margin-bottom: 1.5rem;
   font-size: 2.5rem; // Bigger font size for hotel name
   font-weight: bold; // Emphasize the hotel name
   color: #333; // Darker color for better contrast
+  text-align: left;
 }
+
+.hotel-container-show {
+  margin: 8px 14px
+}
+
+.hotel-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+// .img-fluid {
+//   max-width: 46%;
+//   height: auto;
+// }
 
 // Customize button appearance
 .btn {

@@ -1,10 +1,10 @@
-<div class="container mt-5">
-  <div class="hotel-details mb-4">
-    <h1 class="mb-3"><%= @hotel.name %></h1>
-
-    <div class="hotel-image mb-3">
-      <%= image_tag @hotel.image, alt: @hotel.name, class: "img-fluid" %>
+<div class="hotel-container-show">
+  <div class="hotel-details">
+    <div class="hotel-title">
+      <h1 class=""><%= @hotel.name %></h1>
     </div>
+    <div class="hotel-content">
+      <%= image_tag @hotel.image, alt: @hotel.name, class: "img-fluid" %>
     <div class="hotel-details-info">
       <p>Crime Rating: <span><%= @hotel.crime_rating %></span></p>
 
@@ -13,12 +13,19 @@
       <p>Crime Categories:
       </p>
     </div>
-    <div class="favourites-section mb-4">
+    <div class="favourites-section">
       <%= button_to "Add to Favorites", hotel_favourites_path(@hotel), method: :post, class: "btn btn-success" %>
     </div>
 
     <div class="report-section">
       <p>If you’ve witnessed a crime, <%= link_to "Report a Crime", hotel_reportform_path(@hotel), class: "btn btn-danger" %></p>
+
     </div>
   </div>
+  </div>
+</div>
+<div class="reports-container">
+  <% @reports.each do |report| %>
+    <%= report %>
+    <% end %>
 </div>
