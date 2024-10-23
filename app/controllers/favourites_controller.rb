@@ -10,7 +10,7 @@ class FavouritesController < ApplicationController
 
     @favourite.user = @user
     @favourite.hotel = @hotel
-    
+
     if @favourite.save
       redirect_to hotel_path(@hotel), notice: 'favourite was successfully created.'
     else

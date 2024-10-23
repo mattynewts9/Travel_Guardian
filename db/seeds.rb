@@ -31,8 +31,8 @@ crime_london.each do |crime|
   end
 end
 
-crime1 = RestClient.get('https://data.police.uk/api/crimes-at-location?date=2024-01&lat=51.5101&lng=-0.1205')
-crime_one = JSON.parse(crime1)
+london_crime1 = RestClient.get('https://data.police.uk/api/crimes-at-location?date=2024-01&lat=51.5101&lng=-0.1205')
+crime_one = JSON.parse(london_crime1)
 
 crime_one.each do |crime|
   Crime.create(latitude: crime['location']['latitude'],
@@ -41,8 +41,8 @@ crime_one.each do |crime|
               date: crime['month'])
 end
 
-crimes = RestClient.get('https://data.police.uk/api/crimes-at-location?date=2024-01&lat=51.5074&lng=-0.1272')
-crime_two = JSON.parse(crimes)
+london_crime2 = RestClient.get('https://data.police.uk/api/crimes-at-location?date=2024-01&lat=51.5074&lng=-0.1272')
+crime_two = JSON.parse(london_crime2)
 
 crime_two.each do |crime|
   Crime.create(latitude: crime['location']['latitude'],
@@ -51,8 +51,8 @@ crime_two.each do |crime|
               date: crime['month'])
 end
 
-crime3 = RestClient.get('https://data.police.uk/api/crimes-at-location?date=2024-01&lat=51.5071&lng=-0.1416')
-crime_three = JSON.parse(crime3)
+london_crime3 = RestClient.get('https://data.police.uk/api/crimes-at-location?date=2024-01&lat=51.5071&lng=-0.1416')
+crime_three = JSON.parse(london_crime3)
 
 crime_three.each do |crime|
   Crime.create(latitude: crime['location']['latitude'],
@@ -61,52 +61,54 @@ crime_three.each do |crime|
               date: crime['month'])
 end
 
-manchester_crime = RestClient.get('https://data.police.uk/api/crimes-at-location?date=2024-01&lat=53.4776&lng=-2.2451')
-manchester = JSON.parse(manchester_crime)
+manchester_crime1 = RestClient.get('https://data.police.uk/api/crimes-at-location?date=2024-01&lat=53.4776&lng=-2.2451')
+crime1 = JSON.parse(manchester_crime1)
 
-manchester.each do |crime|
+crime1.each do |crime|
   Crime.create(latitude: crime['location']['latitude'],
               longitude: crime['location']['longitude'],
               category: crime['category'],
               date: crime['month'])
 end
 
-manchester_crime = RestClient.get('https://data.police.uk/api/crimes-at-location?date=2024-01&lat=53.4756&lng=-2.2506')
-manchester = JSON.parse(manchester_crime)
+manchester_crime2 = RestClient.get('https://data.police.uk/api/crimes-at-location?date=2024-01&lat=53.4756&lng=-2.2506')
+manchester2 = JSON.parse(manchester_crime2)
 
-manchester.each do |crime|
+manchester2.each do |crime|
   Crime.create(latitude: crime['location']['latitude'],
               longitude: crime['location']['longitude'],
               category: crime['category'],
               date: crime['month'])
 end
 
-nottingham_crime = RestClient.get('https://data.police.uk/api/crimes-at-location?date=2024-02&lat=52.9545&lng=-1.1549')
-nottingham = JSON.parse(nottingham_crime)
-nottingham.each do |crime|
+manchester_crime3 = RestClient.get('https://data.police.uk/api/crimes-at-location?date=2024-02&lat=52.9545&lng=-1.1549')
+manchester3 = JSON.parse(manchester_crime3)
+manchester3.each do |crime|
   Crime.create(latitude: crime['location']['latitude'],
               longitude: crime['location']['longitude'],
               category: crime['category'],
               date: crime['month'])
 end
 
-more_london_crime = RestClient.get('https://data.police.uk/api/crimes-at-location?date=2024-02&lat=53.4756&lng=-2.2506')
-london_crime_more = JSON.parse(more_london_crime)
-london_crime_more.each do |crime|
+manchester_crime4 = RestClient.get('https://data.police.uk/api/crimes-at-location?date=2023-02&lat=53.4756&lng=-2.2506')
+manchester4 = JSON.parse(manchester_crime4)
+
+
+manchester4.each do |crime|
   Crime.create(latitude: crime['location']['latitude'],
               longitude: crime['location']['longitude'],
               category: crime['category'],
               date: crime['month'])
 end
 
-# mores_london_crime = RestClient.get('https://data.police.uk/api/crimes-at-location?date=2024-02&lat=&lng=-2.2506')
-# london_crime_moress = JSON.parse(more_london_crimes)
-# london_crime_moress.each do |crime|
-#   Crime.create(latitude: crime['location']['latitude'],
-#               longitude: crime['location']['longitude'],
-#               category: crime['category'],
-#               date: crime['month'])
-# end
+manchester_crime5 = RestClient.get('https://data.police.uk/api/crimes-at-location?date=2023-02&lat=53.4776&lng=-2.2451')
+manchester5 = JSON.parse(manchester_crime5)
+manchester5.each do |crime|
+  Crime.create(latitude: crime['location']['latitude'],
+              longitude: crime['location']['longitude'],
+              category: crime['category'],
+              date: crime['month'])
+end
 
 
 
@@ -122,6 +124,170 @@ puts "Creating hotels..."
 
 puts "creating hotels"
 
+Hotel.create(
+  name: "INNSIDE by Meliá Manchester",
+  address: "1 First St, Manchester M15 4RP",
+  crime_rating: 4.2,
+  image: "https://lh3.googleusercontent.com/p/AF1QipNDawulHDoGRtjSg1jpGvdC1eI3CTW2ASc8UdS9=s1360-w1360-h1020",
+  user: freddy
+)
+
+Hotel.create(
+  name: "DoubleTree by Hilton Hotel Manchester",
+  address: "One Piccadilly, Auburn St, Manchester M1 3DG",
+  crime_rating: 3.9,
+  image: "https://lh3.googleusercontent.com/p/AF1QipNNGp6DNEW5dPiFjRA-EQ8pN4Yq1HguDWBKd5vb=s1360-w1360-h1020",
+  user: freddy
+)
+
+Hotel.create(
+  name: "Hotel Brooklyn Manchester",
+  address: "59 Portland St, Manchester M1 3HP",
+  crime_rating: 4.0,
+  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqlVHxq6vHrFDp2zl0IzvcS1IIg8j9HLuLEA&s",
+  user: freddy
+)
+
+Hotel.create(
+  name: "Holiday Inn Manchester",
+  address: "25 Aytoun St, Manchester M1 3AE",
+  crime_rating: 3.9,
+  image: "https://www.himanchestercity.com/main/b82a0cac-8748-47d6-9153-cf2318355a49.webp",
+  user: freddy
+)
+
+Hotel.create(
+  name: "Manchester Piccadilly Hotel",
+  address: "91 London Rd, Manchester M1 2PG",
+  crime_rating: 4.0,
+  image: "https://images.trvl-media.com/lodging/1000000/40000/34400/34337/3b556711.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill",
+  user: freddy
+)
+
+Hotel.create(
+  name: "The Lowry Hotel",
+  address: "50 Dearmans Pl, Salford, Manchester M3 5LH",
+  crime_rating: 4.5,
+  image: "https://ik.imgkit.net/3vlqs5axxjf/external/ik-seo/https://media.iceportal.com/137021/photos/76609541_XL/The-Lowry-Hotel-Exterior.jpg?tr=w-780%2Ch-437%2Cfo-auto",
+  user: freddy
+)
+
+Hotel.create(
+  name: "Malmaison Manchester",
+  address: "1-3 Piccadilly, Manchester M1 3AQ",
+  crime_rating: 4.0,
+  image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2c/8f/e1/b8/exterior-hotel.jpg?w=700&h=-1&s=1",
+  user: freddy
+)
+
+Hotel.create(
+  name: "Radisson Blu Edwardian Manchester",
+  address: "Peter St, Manchester M2 5GP",
+  crime_rating: 4.3,
+  image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2b/30/df/81/exterior.jpg?w=700&h=-1&s=1",
+  user: freddy
+)
+
+Hotel.create(
+  name: "The Townhouse Hotel Manchester",
+  address: "101 Portland St, Manchester M1 6DF",
+  crime_rating: 4.1,
+  image: "https://image-tc.galaxy.tf/wijpeg-bhv4lsk14qhbqu6fs3hjj4y87/gh-l-townhouse-hotel-i3d-0294.jpg?width=1920",
+  user: freddy
+)
+
+Hotel.create(
+  name: "Novotel Manchester Centre",
+  address: "21 Dickinson St, Manchester M1 4LX",
+  crime_rating: 3.8,
+  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTifFAmkHBbWHwI1ZMeE9vKbws-xCHx650wMg&s",
+  user: freddy
+)
+
+Hotel.create(
+  name: "Premier Inn Manchester City Centre",
+  address: "7 Dale St, Manchester M1 1JA",
+  crime_rating: 3.6,
+  image: "https://www.premierinn.com/content/dam/pi/websites/hotelimages/gb/en/M/MANSPI/manchester-city-centre-west-external.jpg",
+  user: freddy
+)
+
+Hotel.create(
+  name: "Hyatt Regency Manchester",
+  address: "55 Booth St W, Manchester M15 6PQ",
+  crime_rating: 4.2,
+  image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/26/b9/1d/11/exterior.jpg?w=700&h=-1&s=1",
+  user: freddy
+)
+
+Hotel.create(
+  name: "Crowne Plaza Manchester",
+  address: "70 Shudehill, Manchester M4 4AF",
+  crime_rating: 3.9,
+  image: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/266810635.jpg?k=9117bb92a847cedad1e8f6621cbba4bcca1e4533d165a5828e2d4e08dbe053a1&o=&hp=1",
+  user: freddy
+)
+
+Hotel.create(
+  name: "AC Hotel by Marriott Manchester",
+  address: "17-19 Trafford Rd, Salford, Manchester M5 3AW",
+  crime_rating: 4.1,
+  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4b0YgVOOX1WenkLXaHftK0ifts8h8DehcqA&s",
+  user: freddy
+)
+
+Hotel.create(
+  name: "Hotel Football Old Trafford",
+  address: "99 Sir Matt Busby Way, Manchester M16 0SZ",
+  crime_rating: 3.7,
+  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuvL9onFdcqRWNqbyOVr1ouFHwAs0dyfvNUg&s",
+  user: freddy
+)
+
+Hotel.create(
+  name: "Clayton Hotel Manchester City Centre",
+  address: "55 Portland St, Manchester M1 3HP",
+  crime_rating: 3.8,
+  image: "https://lovebelfast.co.uk/wp-content/uploads/2022/01/Clayton-Manchester-City-Centre-with-GM-Filiz-Smith-C.jpg",
+  user: freddy
+)
+
+Hotel.create(
+  name: "The Ainscow Hotel",
+  address: "Trinity Way, Manchester M3 5EN",
+  crime_rating: 3.9,
+  image: "https://dm1igrl0afsra.cloudfront.net/AcuCustom/Sitename/DAM/053/8e6hiF3kQL2rdRyGCpqY.jpg",
+  user: freddy
+)
+
+Hotel.create(
+  name: "YOTEL Manchester Deansgate",
+  address: "John Dalton House, 2 John Dalton St, Manchester M2 6JR",
+  crime_rating: 4.0,
+  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS80WEmpxrurYkfwmwA3pvRpTp8NZDY3dtMaQ&s",
+  user: freddy
+)
+
+Hotel.create(
+  name: "Voco Manchester",
+  address: "59 Portland St, Manchester M1 3HP",
+  crime_rating: 3.2,
+  image: "https://lh5.googleusercontent.com/p/AF1QipOZRO8C5AXyBzmFwCWp33oEYd4bbpYEh2D_Id3e=w253-h142-k-no",
+  user: freddy)
+
+Hotel.create(
+  name: "Dakota Hotel Manchester",
+  address: "29 Ducie St, Manchester M1 2JL",
+  crime_rating: 3.0,
+  image: "https://lh5.googleusercontent.com/p/AF1QipN5S4D3Yk1ZgyQ30gWQzeaChSXdO4F_mGMpC2U8=w253-h316-k-no",
+  user: freddy)
+
+Hotel.create(
+  name: "Hotel Gotham Manchester",
+  address: "100 King St, Manchester M2 4WU",
+  crime_rating: 3.5,
+  image: "https://lh5.googleusercontent.com/p/AF1QipNQvYg9QUJEYTOttb4DbJXja6-zR-Zf4FZAYQEx=w253-h336-k-no",
+  user: freddy)
 
 Hotel.create(
   name: "1 Hotel Mayfair",
