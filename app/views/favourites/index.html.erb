@@ -7,10 +7,10 @@
         <div>
          <h2 class="hotel-name"><%= favourite.hotel.name %></h2>
          <p><%= favourite.hotel.address %></p>
-         <h2 class="crime-rating"><%= favourite.hotel.crime_rating %></h2>
+         <h2 class="crime-rating"> Crime rating : <%= favourite.hotel.crime_rating %></h2>
         </div>
         <div class="heart">
-          <i class="fa-solid fa-heart" style="color: #e71313;"></i>
+          <%# <i class="fa-solid fa-heart" style="color: #e71313;"></i> %>
         </div>
         <div class="trash-can">
           <%= link_to favourite_path(favourite), data: {turbo_method: :delete, turbo_confirm: "Do you really want to remove #{favourite.hotel.name} from favourites?"} do %>
