@@ -10,7 +10,7 @@
 
             <p>Crime Rating: <span><%= @hotel.crime_rating %></span></p>
 
-            <p>Crime Categories:
+            <p>Crime Categories: Theft, Shoplifting
             </p>
           </div>
         </div>
@@ -21,15 +21,22 @@
       </div>
       </div>
   </div>
-
-
-      <div class="reports-container">
+      <div class="report-title">
         <h1>Reports</h1>
-        <div class="reports-content-container">
+      </div>
+      <div class="reports-container">
         <% @reports.each do |report| %>
-          <%= report.comment %>
-          <%= report.safety_rating %>
+        <div class="reports-content-container">
+            <%= image_tag(report.user.image) %>
+            <div class="report-description">
+              <p><%= report.comment %></p>
+              <% if report.safety_rating > 3.0 %>
+              <p class="green-rating">Safety rating: <%= report.safety_rating %></p>
+              <% else %>
+              <p class="red-rating">Safety rating: <%= report.safety_rating %></p>
+              <% end %>
+            </div>
+        </div>
           <% end %>
-          </div>
       </div>
 </div>
