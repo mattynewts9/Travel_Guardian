@@ -1,4 +1,5 @@
 <div class="hotel-content-container">
+
   <div class="hotel-container-show">
     <div class="hotel-details">
       <h1 class=""><%= @hotel.name %></h1>
@@ -8,14 +9,18 @@
           <div class="hotel-details-info">
             <p><%= @hotel.address %></p>
 
-            <p>Crime Rating: <span><%= @hotel.crime_rating %></span></p>
+            <p>Safety Rating: <span><%= @hotel.crime_rating %></span></p>
 
             <p>Crime Categories: Theft, Shoplifting
             </p>
           </div>
         </div>
             <div class="btn-container">
+               <% unless Favourite.where(user:current_user, hotel: @hotel).any? %>
                 <%= button_to "Add to Favorites", hotel_favourites_path(@hotel), method: :post, class: "btn btn-success" %>
+                <% else  %>
+                <%= link_to "View in favourites", favourites_path, class: "btn btn-success" %>
+                <% end %>
                 <div><p>If you’ve witnessed a crime,</p> <%= link_to "Report a Crime", new_hotel_report_path(@hotel), class: "btn btn-danger" %></div>
             </div>
       </div>
