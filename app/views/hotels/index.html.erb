@@ -1,6 +1,4 @@
 <div class="hotel-body-container">
-  <%= link_to "Return to search", root_path, class: "return-button"%>
-
 <div class="container-crime">
   <h3>Based on your search... here is what we found</h3>
     <h3 class="rating-text">This area has an average safety rating of:
@@ -48,7 +46,7 @@
             <h3><%= hotel.name %></h3>
             <p><%= hotel.address %></p>
           </div>
-          <h6>Crime Rating : <span><%= hotel.crime_rating %></span></h6>
+          <h6>Safely Rating : <span><%= hotel.crime_rating %></span></h6>
           <%= link_to "View crime rates!", hotel_path(hotel), class: "crime-btn" %>
         </div>
       </div>

@@ -1,14 +1,17 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-      <%= link_to root_path, class: "navbar-brand d-flex" do %>
-        <%= image_tag "travel_guardian_nav_pic.png" %>
-        <span class="logo-text">Travel Guardian</span>
-      <% end %>
+    <%= link_to root_path, class: "navbar-brand d-flex" do %>
+      <%= image_tag "travel_guardian_nav_pic.png" %>
+      <span class="logo-text">Travel Guardian</span>
+    <% end %>
 
     <div class="d-flex">
       <div class="container-site-links">
         <div class="navbar-site-links">
           <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <%= link_to "Find hotel", root_path, class: "return-button"%>
+            </li>
             <li class="nav-item">
               <%= link_to "My favourites", favourites_path, class: "nav-link-center" %>
             </li>

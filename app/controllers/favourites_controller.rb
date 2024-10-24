@@ -12,7 +12,7 @@ class FavouritesController < ApplicationController
     @favourite.hotel = @hotel
 
     if @favourite.save
-      redirect_to hotel_path(@hotel), notice: 'favourite was successfully created.'
+      redirect_to favourites_path, notice: 'favourite was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end

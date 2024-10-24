@@ -7,7 +7,6 @@
       <%= image_tag @hotel.image, alt: @hotel.name, class: "img-fluid rounded shadow" %>
     </div>
 
-    <h2 class="reports-title">Reports:</h2>
 
     <h3 class="add-report-title mt-4">Add a Report:</h3>
     <p class="crime-info text-center text-muted" style="font-size: 0.9em;">(Please include information relevant to crime issues)</p>
@@ -25,7 +24,7 @@
         </div>
 
         <div class="form-actions d-flex justify-content-between mt-4">
-          <%= f.submit 'Add Report', class: 'submit-btn' %>
+          <%= f.submit 'Add your Report', class: 'submit-btn' %>
           <button type="button" class="clear-btn" onclick="clearForm()">Clear</button>
           <%= link_to 'Back', request.referrer || hotels_path, class: 'back-btn' %>
         </div>
