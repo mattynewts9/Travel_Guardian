@@ -1,3 +1,7 @@
+<% content_for :meta_title, "#{@hotel.name} is on #{DEFAULT_META["meta_product_name"]}" %>
+ <% content_for :meta_description, @hotel.address %>
+ <% content_for :meta_image, image_path(@hotel.image) %>
+
 <div class="hotel-content-container">
   <div class="hotel-container-show">
     <div class="hotel-details">

@@ -1,0 +1,6 @@
+# config/meta.yml
+ meta_product_name: "Travel Guardian"
+ meta_title: "Travel Guardian - Wander freely, worry less."
+ meta_description: "We provide Safety and crime information for the general population who are looking for more hotels in safe areas within the UK"
+ meta_image: "travel_guardian_nav_pic" # should exist in `app/assets/images/`
+#  twitter_account: "@product_twitter_account" # required for Twitter Cards
