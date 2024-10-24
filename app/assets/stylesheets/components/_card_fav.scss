@@ -1,9 +1,11 @@
 .container-fav {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 100px;
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 0 180px;
-  gap: 35px;
+
   margin-bottom: 152px;
 }
 
@@ -35,7 +37,7 @@
   flex-direction: column;
   justify-content: space-between;
   height: 400px;
-  width: 30%;
+  width: 90%;
   & img {
     height: 260px;
     object-fit: cover;

@@ -1,0 +1,84 @@
+.banner-travel-safe {
+  height: 550px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 13px;
+}
+.health-and-security-header {
+  text-align: center;
+  font-family: sans-serif;
+  padding-top: 80px;
+  padding-bottom: 40px;
+  color: rgb(26, 42, 46);
+  font-weight: bold;
+}
+
+
+
+.card-travel-info {
+  background: rgb(57, 117, 117);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 35px;
+
+  border-radius: 5px;
+}
+
+.card-travel-info-middle {
+  background: rgb(253, 253, 253);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 35px;
+  border: 2px, solid rgb(43, 80, 88);
+  border-radius: 5px;
+}
+
+
+.card-travel-info-middle h3 {
+  font-family: sans-serif;
+  font-weight: bold;
+  color: rgb(34, 63, 70);
+  padding-bottom: 2px;
+
+}
+
+.card-travel-info-middle p {
+  color: rgb(43, 80, 88);
+  font-family: sans-serif;
+  padding-bottom: 20px;
+}
+
+.card-travel-info h3 {
+  font-family: sans-serif;
+  font-weight: bold;
+  color: white;
+  padding-bottom: 2px;
+
+}
+
+.card-travel-info p {
+  color: white;
+  font-family: sans-serif;
+  padding-bottom: 20px;
+}
+
+
+.card-travel-info-money h3 {
+  font-family: sans-serif;
+  font-weight: bold;
+  color: white;
+  padding-bottom: 2px;
+
+}
+
+.card-travel-info-money p {
+  color: white;
+  font-family: sans-serif;
+  padding-bottom: 20px;
+}
+
+.card-travel-info-money {
+  background: rgb(57, 117, 117);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 35px;
+  margin-bottom: 100px;
+  border-radius: 5px;
+}
