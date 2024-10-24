@@ -1,5 +1,5 @@
-<div class="hotel-body-container">
-  <%= link_to "Return to search", root_path, class: "return-button"%>
+<%# <div class="hotel-body-container">
+  <%= link_to "Return to search", hotel_path(@hotel), class: "return-button"%>
 <h2 class="fav-header">My favourites</h2>
 <div class="container-fav">
   <% @favourites.each do |favourite| %>

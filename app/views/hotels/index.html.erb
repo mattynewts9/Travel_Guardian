@@ -6,8 +6,8 @@
     <h3 class="rating-text">This area has an average safety rating of:
       <% total_crime_rating = @hotels.sum(:crime_rating) %>
       <% average_crime_rating = total_crime_rating / @hotels.size %>
-      <%= average_crime_rating.to_i %>
-      <% if average_crime_rating.to_i < 3.5 %>
+      <%= average_crime_rating.floor(1) %>
+      <% if average_crime_rating < 3.5 %>
         <span style="color: red">BAD</span> <%= image_tag "thumb-down.png" %>
       <% else %>
         <span style="color: green">GOOD</span> <%= image_tag "check.png" %>
