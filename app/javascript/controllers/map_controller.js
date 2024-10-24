@@ -5,7 +5,8 @@ export default class extends Controller {
   static values = {
     apiKey: String,
     hotelMarkers: Array,
-    crimeMarkers: Array
+    crimeMarkers: Array,
+    controlMap: Array
   }
 
   connect() {
