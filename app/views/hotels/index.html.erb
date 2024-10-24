@@ -27,10 +27,11 @@
         <% end %>
     </table>
 
-    <div class="mapbox" style="width: 50%; height: 100%; border-radius:3px;"
+    <div class="mapbox" style="width: 50%; height: 100%; border-radius:5px;"
       data-controller="map"
       data-map-hotel-markers-value="<%= @hotel_markers.to_json %>"
       data-map-crime-markers-value="<%= @crime_markers.to_json %>"
+      data-map-crime-markers-value="<%= @map_controls.to_json %>"
       data-map-hotel-icon-url-value="<%= asset_path('hotel-icon.png') %>"
       data-map-crime-icon-url-value="<%= asset_path('spyware.png') %>"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
