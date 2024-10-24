@@ -26,6 +26,7 @@
 }
 
 .navbar-lewagon .navbar-brand img {
+  margin-right: 5px;
   width: 60px;
 }
 
@@ -54,6 +55,11 @@
   font-weight: 600;
   position: relative;
   transition: color 0.3s ease;
+}
+
+.navbar-brand {
+  align-items: center;
+  justify-content: center;
 }
 
 .navbar-lewagon a.nav-link-center::after {
