@@ -10,9 +10,9 @@ class ReportsController < ApplicationController
     @report = Report.new(report_params)
     @report.hotel = @hotel
     @report.user = current_user
-   
+
     if @report.save # Save the report
-      redirect_to @hotel, notice: 'Report was successfully created.' # Redirect with a success message
+      redirect_to hotel_path(@hotel), notice: 'Report was successfully created.' # Redirect with a success message
     else
       render :new, status: :unprocessable_entity # Render the new form again with errors
     end
