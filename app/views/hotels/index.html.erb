@@ -5,12 +5,12 @@
       <% total_crime_rating = @hotels.sum(:crime_rating) %>
       <% average_crime_rating = total_crime_rating / @hotels.size %>
       <%= average_crime_rating.floor(1) %>
-      <% if average_crime_rating < 3.5 %>
+      <% if average_crime_rating < 3.5 %> / 5
         <span style="color: red">BAD</span> <%= image_tag "thumb-down.png" %>
       <% else %>
-        <span style="color: green">GOOD</span> <%= image_tag "check.png" %>
+       / 5 <span style="color: green">GOOD</span> <%= image_tag "check.png" %>
       <% end %>
-    <h3>
+    </h3>
 </div>
   <div class="map-container">
     <table class="table-container">
@@ -47,7 +47,7 @@
             <h3><%= hotel.name %></h3>
             <p><%= hotel.address %></p>
           </div>
-          <h6>Safety Rating : <span><%= hotel.crime_rating %></span></h6>
+          <h6>Safety Rating : <span><%= hotel.crime_rating %> / 5</span></h6>
           <%= link_to "View crime rates!", hotel_path(hotel), class: "crime-btn" %>
         </div>
       </div>
