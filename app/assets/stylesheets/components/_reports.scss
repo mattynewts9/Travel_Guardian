@@ -23,6 +23,10 @@
     }
 }
 
+.report-info  {
+  width: 100%;
+}
+
 
 .reports-container {
   display: flex;
@@ -49,4 +53,23 @@
 
 .red-rating {
   color: red;
+}
+
+.hotel-report-details {
+    border: 3px solid #2b5058;
+    margin-bottom: 3rem;
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    flex-direction: column;
+    font-family: "kanit";
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.report-form {
+  width: 720px;
 }
