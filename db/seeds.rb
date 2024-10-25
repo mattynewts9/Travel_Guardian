@@ -207,6 +207,63 @@ Crime.create(
   date: nil
 )
 
+Crime.create(
+  latitude: 51.5063,
+  longitude: -0.1134,
+  category: "violent-crime",
+  date: nil
+)
+
+Crime.create(
+  latitude: 51.5065,
+  longitude: -0.1334,
+  category: "other-theft",
+  date: nil
+)
+
+Crime.create(
+  latitude: 53.3783,
+  longitude: -2.1414,
+  category: "Anti-social-behaviour",
+  date: nil
+)
+
+Crime.create(
+  latitude: 53.4283,
+  longitude: -2.4214,
+  category: "Anti-social-behaviour",
+  date: nil
+)
+
+Crime.create(
+  latitude: 53.4749,
+  longitude: -2.2505,
+  category: "Drug offense",
+  date: nil
+)
+
+Crime.create(
+  latitude: 53.3149,
+  longitude: -2.1405,
+  category: "Drug offense",
+  date: nil
+)
+
+Crime.create(
+  latitude: 53.482910,
+  longitude: -2.565542,
+  category: "Car Theft",
+  date: nil
+)
+
+Crime.create(
+  latitude: 53.452910,
+  longitude: -2.225542,
+  category: "Car Theft",
+  date: nil
+
+)
+
 
 freddy = User.create(email: "freddy@123.com", password: "123123", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHGth1GpE34QEwBpZiVsYlDs_wmprjG0WuGA&s")
 paul = User.create(email: "paul@123.com", password: "123123", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvi7HpQ-_PMSMOFrj1hwjp6LDcI-jm3Ro0Xw&s")
