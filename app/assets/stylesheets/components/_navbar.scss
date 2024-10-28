@@ -95,6 +95,55 @@
   margin: 0;
 }
 
+
+.dropdown-menu {
+  color: white;
+  border: solid 3px #2b5058;
+  font-family: "kanit";
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-evenly;
+
+
+  .profile-image {
+    object-fit: contain;
+    border-radius: 50%;
+    width: 35%;
+  }
+}
+
+.dropdown-log-out:hover {
+  color: #00a99d;
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .dropdown-log-out::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #11302d;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
+  }
+
+  .dropdown-log-out:hover::after {
+    width: 100%;
+  }
+}
+
+
+.dropdown-log-out {
+  color: #2b5058;
+  text-decoration: none;
+
+}
+
 @media (max-width: 800px) {
   .navbar-lewagon {
     flex-direction: column;

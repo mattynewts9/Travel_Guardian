@@ -35,12 +35,14 @@
           <% if user_signed_in? %>
             <li class="nav-item dropdown">
               <%= image_tag "bars-solid.svg", class: "burger-icon dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <%= link_to "Action", "#", class: "dropdown-item" %>
-                <%= link_to "Another action", "#", class: "dropdown-item" %>
-                <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
-              </div>
-            </li>
+              <div class="dropdown-menu d-flex dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <%# <%= link_to "Action", "#", class: "dropdown-item" %>
+                <% if current_user %>
+                    <%= link_to destroy_user_session_path, class: "dropdown-log-out", data: { turbo_method: :delete } do %>
+                    Log out
+                    <% end %>
+                      <%= image_tag current_user.image, class: "profile-image", alt: "Profile" %>
+                        <% end %></li>
           <% else %>
           <li class="nav-item">
               <%= link_to "Login", new_user_session_path, class: "nav-link" %>
