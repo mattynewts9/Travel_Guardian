@@ -1,55 +1,69 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-    <%= link_to root_path, class: "navbar-brand d-flex" do %>
-      <%= image_tag "travel_guardian_nav_pic.png" %>
-      <span class="logo-text">Travel Guardian</span>
+<%# <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid"> %>
+
+<header>
+  <nav class="navbar">
+    <%= link_to root_path, class: "" do %>
+    <%= image_tag "travel_guardian_nav_pic.png" %>
+    <span class="logo-text">Travel Guardian</span>
     <% end %>
 
-    <div class="d-flex">
+    <ul class="nav-menu">
+      <li class="nav-item">
+        <%= link_to "Find hotel", root_path, class: ""%>
+      </li>
+      <li class="nav-item">
+        <%= link_to "My favourites", favourites_path, class: "" %>
+      </li>
+      <%# <li class="nav-item active">
+        <%# <%=# link_to "Reports", "#", class: "nav-link-center" %>
+      <li class="nav-item">
+        <%= link_to "Travel tips", emergency_contacts_path, class: "" %>
+      </li>
+    </ul>
+    <%# <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button> %>
+
+    <div class="">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar">
+        <% if user_signed_in? %>
+            <%= image_tag "bars-solid.svg", class: "burger-icon dropdown-toggle", id: "", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="" aria-labelledby="">
+              <%# <%= link_to "Action", "#", class: "dropdown-item" %>
+              <% if current_user %>
+                  <%= link_to destroy_user_session_path, class: "dropdown-log-out", data: { turbo_method: :delete } do %>
+                  Log out
+                  <% end %>
+                    <%= image_tag current_user.image, class: "profile-image", alt: "Profile" %>
+                      <% end %>
+                      </span>
+      <% else %>
+        <span class="bar">
+            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+        </span>
+          <% end %>
+      </div>
+  </nav>
+</header>
+
+
+
+
+    <%# <div class="d-flex">
       <div class="container-site-links">
         <div class="navbar-site-links">
-          <ul class="navbar-nav me-auto">
-            <li class="nav-item">
-              <%= link_to "Find hotel", root_path, class: "return-button"%>
-            </li>
-            <li class="nav-item">
-              <%= link_to "My favourites", favourites_path, class: "nav-link-center" %>
-            </li>
-            <li class="nav-item active">
-              <%# <%=# link_to "Reports", "#", class: "nav-link-center" %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "Travel tips", emergency_contacts_path, class: "nav-link-center" %>
-            </li>
-          </ul>
-        </div>
-      </div>
+          <%# <ul class="navbar-nav me-auto nav-menu"> %>
+        <%# </div>
+      </div>  %>
 
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto">
-          <% if user_signed_in? %>
-            <li class="nav-item dropdown">
-              <%= image_tag "bars-solid.svg", class: "burger-icon dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-              <div class="dropdown-menu d-flex dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <%# <%= link_to "Action", "#", class: "dropdown-item" %>
-                <% if current_user %>
-                    <%= link_to destroy_user_session_path, class: "dropdown-log-out", data: { turbo_method: :delete } do %>
-                    Log out
-                    <% end %>
-                      <%= image_tag current_user.image, class: "profile-image", alt: "Profile" %>
-                        <% end %></li>
-          <% else %>
-          <li class="nav-item">
-              <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-            </li>
-          <% end %>
-        </ul>
-      </div>
-    </div>
+
+
+    <%# </div>
   </div>
-</div>
+</div> %>
