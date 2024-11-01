@@ -1,73 +1,84 @@
-.navbar-lewagon {
+// // .navbar-lewagon {
+// //   display: flex;
+// //   align-items: center;
+// //   justify-content: space-between;
+// //   background-color: #fff;
+// //
+// //   padding: 2px 20px;
+// //   position: sticky;
+// //   top: 0;
+// //   z-index: 1000;
+// //   transition: background 0.3s ease;
+// // }
+
+header {
+  background-color: white;
+ }
+
+li { list-style: none;
+  }
+
+a {
+  color: #2b5058;
+  text-decoration: none;
+}
+
+.navbar {
+  min-height: 70px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  background-color: #fff;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-  padding: 2px 20px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  transition: background 0.3s ease;
-}
-
-
-.navbar-brand a {
-    justify-content: space-between;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-}
-
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-  margin-right: 20px;
-
-}
-
-.navbar-lewagon .navbar-brand img {
-  margin-right: 5px;
-  width: 60px;
-}
-
-.burger-icon {
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-}
-.container-site-links {
-  display: flex;
   align-items: center;
-  margin-right: 50px;
+  padding: 0 24px;
+  text-align: center;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-  margin-right: 10px;
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 35px;
+  font-family: "kanit";
+  margin: 0px;
+}
+
+.logo {
+  width:300px;
+  display: flex;
 
   img {
-    flex-grow: 0;
-    margin-right: 10px;
+  width: 20%;
   }
+
 }
 
-.navbar-lewagon a.nav-link-center {
-  text-decoration: none;
-  color: #11302d;
-  letter-spacing: 1px;
-  margin: 0 20px;
-  font-family: Arial, sans-serif;
-  font-weight: 600;
-  position: relative;
-  transition: color 0.3s ease;
+.logo-text {
+    font-family: 'kanit';
+    font-size: 1.5rem;
+    color: #2b5058;
+    // margin-left: 10px;
+    letter-spacing: 1px;
+    // margin-left: -2px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    margin-left: 1px;
 }
 
-.navbar-brand {
-  align-items: center;
-  // justify-content: center;
+.nav-branding {
+  font-size:2rem;
 }
 
-.navbar-lewagon a.nav-link-center::after {
+.nav-item {
+  position:relative;
+  font-size: 1.2rem;
+}
+
+.nav-item a {
+  transition: 0.7s ease;
+}
+
+.nav-item a::after {
   content: "";
   position: absolute;
   width: 0;
@@ -78,97 +89,147 @@
   transition: width 0.3s ease;
 }
 
-.navbar-lewagon a.nav-link-center:hover::after {
+.nav-item a:hover::after {
   width: 100%;
 }
 
-.navbar-lewagon a.nav-link-center:hover {
+
+.nav-item a:hover {
   color: #00a99d;
 }
 
-.logo-text {
-  display: inline-block;
-  font-family: 'kanit';
-  font-size: 24px;
-  color: #2b5058; /* Same color as nav links */
-  margin-left: 10px;
-  letter-spacing: 1px;
-  margin-left: -2px;
-  margin: 0;
-}
 
-
-.dropdown-menu {
-  color: white;
-  border: solid 3px #2b5058;
-  font-family: "kanit";
-  border-radius: 3px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: space-evenly;
-
-
-  .profile-image {
-    object-fit: contain;
-    border-radius: 50%;
-    width: 35%;
-  }
-}
-
-.dropdown-log-out:hover {
-  color: #00a99d;
-
-  a:hover {
-    text-decoration: underline;
-  }
-
-  .dropdown-log-out::after {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 2px;
-    background-color: #11302d;
-    bottom: -5px;
-    left: 0;
-    transition: width 0.3s ease;
-  }
-
-  img {
-    flex-grow: 0;
-  }
-
-  .dropdown-log-out:hover::after {
-    width: 100%;
-  }
-}
-
-
-.dropdown-log-out {
+.nav-menu .dropdown-log-out {
   color: #2b5058;
+  position: relative;
   text-decoration: none;
-
 }
 
-// @media (max-width: 768px) {
-//   .navbar-lewagon {
-//     width: 50%;
+.nav-menu .dropdown-log-out:hover {
+  color: red;
+}
 
-//     .logo-text {
-//       font-size: 10px;
-//     }
+.nav-menu .dropdown-log-out::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: rgb(147, 29, 29);
+  bottom: -5px;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+.nav-menu .sign-in:hover::after {
+  width: 100%;
+}
+
+
+.nav-menu .sign-in {
+  color: #2b5058;
+  position: relative;
+  text-decoration: none;
+}
+
+.nav-menu .sign-in:hover {
+  color: rgb(5, 153, 5);
+}
+
+.nav-menu .sign-in::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: rgb(32, 119, 53);
+  bottom: -5px;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+.nav-menu .sign-in:hover::after {
+  width: 100%; /* Expands underline on hover */
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+}
+
+.hamburger:hover {
+  color: #00a99d;
+}
+
+.hamburger:hover .bar {
+  background-color: #00a99d;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #2b5058;
+}
+
+@media(max-width:872px){
+  .hamburger {
+    display: block;
+  }
+
+  .hamburger.active .bar:nth-child(2){
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1){
+    transform:translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3){
+    transform:translateY(-8px) rotate(-45deg);
+  }
+
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    gap: 0;
+    flex-direction: column;
+    background-color: black;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+  }
+
+  .nav-item {
+    margin: 16px 0;
+  }
+}
+
+.nav-menu.active {
+  left: 0;
+}
+
+
+@media(max-width:380px) {
+  .logo-text {
+    font-size: 1.2rem;
+
+    .logo {
+      width:10px;
+    }
+  }
+
+  .navbar {
+    padding: 0 5px;
+  }
+}
+
+// @media(min-width:414px) {
+//   .navbar {
+//     padding: 0 12px;
 //   }
 
 // }
-  // .navbar-lewagon .container-site-links {
-  //   margin-right: 0;
-  // }
-
-  // .navbar-lewagon a.nav-link-center {
-  //   margin: 10px 0;
-  // }
-
-
-header {
-  background-color: white;
-}
