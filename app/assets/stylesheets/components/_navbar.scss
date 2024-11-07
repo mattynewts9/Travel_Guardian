@@ -212,24 +212,71 @@ a {
   left: 0;
 }
 
+// mobile queries
 
 @media(max-width:380px) {
   .logo-text {
     font-size: 1.2rem;
 
-    .logo {
-      width:10px;
+    img{
+        margin-left: 3%;
+      }
     }
+
+    .logo {
+      width: 88%;
   }
 
   .navbar {
-    padding: 0 5px;
+    justify-content: unset;
+    padding: 0px;
+
+    .hamburger {
+      margin-right: 3%;
+    }
   }
 }
 
-// @media(min-width:414px) {
-//   .navbar {
-//     padding: 0 12px;
-//   }
 
-// }
+@media(max-width:680px) {
+
+  .index-card-container {
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+
+    .card-category {
+      padding: 0 20px;
+    }
+    .card-category p {
+      text-align: center;
+      font-size: 1.0rem;
+    }
+
+    .card-category .icon {
+      left: 37%;
+    }
+  }
+
+  .index-card-container {
+    margin: 0 10px ;
+  }
+
+  .tag-line {
+    font-size: 1.2rem;
+  }
+
+  .tag-2 {
+    font-size: 0.9rem;
+  }
+
+.alert {
+    background-color: rgba(43, 80, 88, 0.9);
+    border-radius: 10px;
+    bottom: 75%;
+    right: 0%;
+    color: white;
+    font-family: kanit;
+    z-index: 1000;
+  }
+}

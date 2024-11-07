@@ -1,17 +1,16 @@
 <div class="hotel-body-container">
-<h1 class="hotel-name text-center mb-5"><%= @hotel.name %></h1>
+<h1 class="hotel-report-name text-center"><%= @hotel.name %></h1>
 
-<div class="container">
+<div class="report-container">
   <div class="hotel-report-details mb-4">
-    <div class="hotel-image mb-3">
+    <div class="hotel-report-image">
       <%= image_tag @hotel.image, alt: @hotel.name, class: "img-fluid rounded shadow" %>
     </div>
 
   <div class="report-info">
-    <h3 class="add-report-title mt-4">Add a Report:</h3>
-    <p class="crime-info text-center text-muted" style="font-size: 0.9em;">(Please include information relevant to crime issues)</p>
+    <p class="crime-info text-center">(Please include information relevant to crime issues)</p>
   </div>
-    <div class="form-container mt-4">
+    <div class="report-form-container mt-4">
       <%= form_with model: [@hotel, @report], local: true, html: { class: 'report-form', id: 'reportForm' } do |f| %>
         <div class="form-group">
           <%= f.label :comment, 'Your Report (Crime-related information only)', class: 'form-label' %>
@@ -23,10 +22,10 @@
           <%= f.select :safety_rating, options_for_select((1..5).map { |n| [n, n] }), {}, class: 'form-control' %>
         </div>
 
-        <div class="form-actions d-flex justify-content-between mt-4">
-          <%= f.submit 'Add your Report', class: 'submit-btn' %>
+        <div class="form-actions mt-4">
+          <%= f.submit 'Add Report', class: 'submit-btn', id: 'add-report-btn' %>
           <button type="button" class="clear-btn" onclick="clearForm()">Clear</button>
-          <%= link_to 'Back', request.referrer || hotels_path, class: 'back-btn' %>
+          <%= link_to 'Back', request.referrer || hotels_path, class: 'back-btn', id: 'go-back-btn' %>
         </div>
       <% end %>
     </div>

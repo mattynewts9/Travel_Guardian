@@ -28,17 +28,22 @@
   }
 
   p {
-    font-size: 13px;
+    font-size: 0.7rem;
     color: grey;
+    font-family: "kanit";
     margin-bottom: 20px;
+  }
+
+  a {
+    font-family: "kanit";
   }
 }
 
 .hotel-content a {
   text-decoration: none;
-  border: 2px rgb(28, 125, 230) solid;
+  border: 2px #2b5058 solid;
   background: none;
-  color:rgb(28, 125, 230);
+  color: #2b5058;
 
 }
 
@@ -79,9 +84,24 @@
 
 .link-button a:hover {
   box-shadow: 1px 1px 1px 1px rgba(29, 29, 29, 0.194);
-  text-decoration: rgba(28, 126, 230, 0.23) underline;
+  text-decoration: #2b5058 underline;
   transition: 0.2s;
-  color:rgb(12, 121, 239);
-  font-weight: lighter;
+  border: 2px solid #2b5058;
+  color: #2b5058;
+  font-weight: 300;
+}
+
+.mapboxgl-popup-content {
+  border-radius: 5px;
+  border: 3px solid #2b5058;
+
+  p {
+    font-size: 'kanit';
+  }
+
+  h5 {
+    color: black;
+    font-family: 'kanit';
+  }
 
 }
