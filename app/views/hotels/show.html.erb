@@ -2,35 +2,38 @@
  <%# <% content_for :meta_description, @hotel.address %>
  <%# <% content_for :meta_image, image_path(@hotel.image) %>
 <div class="hotel-content-container">
-
-  <div class="hotel-container-show">
     <div class="hotel-details">
-      <h1 class=""><%= @hotel.name %></h1>
+        <%= image_tag @hotel.image, alt: @hotel.name, class: "img-fluid" %>
       <div class="hotel-content-items">
-        <div class="hotel-title-img">
-          <%= image_tag @hotel.image, alt: @hotel.name, class: "img-fluid" %>
-          <div class="hotel-details-info">
-            <p><%= @hotel.address %></p>
-
-            <p>Safety Rating: <span><%= @hotel.crime_rating %> / 5</span></p>
-
-            <p>Crime Categories: Theft, Shoplifting
-            </p>
-          </div>
+        <div class="title-info-show">
+          <h1><%= @hotel.name %></h1>
+          <p><%= @hotel.address %></p>
         </div>
+              <h6>Safety Rating: <span><%= @hotel.crime_rating %> / 5</span></h6>
+              <p id="crime-categories">
+                Crime Categories: Theft, Shoplifting
+              </p>
+      </div>
             <div class="btn-container">
                <% unless Favourite.where(user:current_user, hotel: @hotel).any? %>
                 <%= button_to "Add to Favorites", hotel_favourites_path(@hotel), method: :post, class: "btn btn-success" %>
                 <% else  %>
                 <%= link_to "View in favourites", favourites_path, class: "btn btn-success" %>
                 <% end %>
-                <div><p>If you’ve witnessed a crime,</p> <%= link_to "Report a Crime", new_hotel_report_path(@hotel), class: "btn btn-danger" %></div>
+                <div><p id="report-crime-text">If you’ve witnessed a crime,</p> <%= link_to "Report a Crime", new_hotel_report_path(@hotel), class: "btn btn-danger" %></div>
             </div>
       </div>
-      </div>
-  </div>
+</div>
+
       <div class="report-title">
         <h1>Reports</h1>
+          <div>
+            <% if @reports.any? %>
+              <p>There are <%= @reports.count %> reports for this hotel.</p>
+            <% else %>
+              <p>There are no reports available for this hotel.</p>
+            <% end %>
+          </div>
       </div>
       <div class="reports-container">
         <% @reports.each do |report| %>
@@ -44,7 +47,9 @@
               <p class="red-rating">Safety rating: <%= report.safety_rating %></p>
               <% end %>
             </div>
+              <div>
+
+              </div>
         </div>
           <% end %>
       </div>
-</div>

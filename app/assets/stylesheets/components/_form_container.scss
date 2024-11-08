@@ -1,0 +1,105 @@
+.form-container-login {
+  width: 100%;
+  padding: 2%;
+  color: rgb(43, 80, 88);
+  width: 100%;
+  padding: 28px;
+  font-family: 'Kanit';
+}
+
+.form-control {
+  display: block;
+  border-radius: 58px;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--bs-body-color);
+  -webkit-appearance: none;
+  border: 3px solid rgba(43, 80, 88, 0.5);
+  -moz-appearance: none;
+  appearance: none;
+  background-color: var(--bs-body-bg);
+  background-clip: padding-box;
+  border-radius: var(--bs-border-radius);
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+
+.form-title {
+  font-family: "kanit";
+  font-weight: 300;
+  margin-bottom: 15px;
+}
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .login-btn {
+    margin-top: 10px;
+    color: #2b5058;
+    font-family: kanit;
+    font-size: 1.3rem;
+    border: 3px solid #2b5058;
+    width: 15rem;
+    min-width: 50px;
+    max-width: 300px;
+  }
+
+  .login-btn:hover {
+    opacity: 0.9;
+    text-decoration: underline;
+    box-shadow: 2px 2px 2px black;
+  }
+}
+
+.register-links {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  flex-direction: column;
+  font-family: "kanit";
+  font-size: 0.9rem;
+}
+
+.register-links {
+  a {
+  width: 100%;
+  min-width: 50px;  // add this if you want
+  max-width: 300px;
+  text-align: center;
+  border: 1px solid white;
+  padding: 8px;
+  background-color: #2b5058;
+  color: white;
+  border-radius: 5px;
+}
+
+
+
+a:hover {
+opacity: 0.9;
+box-shadow: 2px 2px 2px black;
+}
+}
+
+#new_user a {
+    width: 13%;
+    text-align: center;
+    border: 1px solid white;
+    padding: 8px;
+    background-color: #2b5058;
+    color: white;
+    border-radius: 5px;
+  }
+
+@media(max-width:977px){
+  .register-links {
+    text-align: center;
+    align-items: center;
+    margin-top: 10px;
+}
+}

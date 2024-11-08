@@ -7,10 +7,11 @@
 .clear-btn {
   color: white;
   padding: 8px 24px;
-  border-radius: 4px;
-  background: rgb(7, 71, 90);
+  border-radius: 5px;
+  background-color: darkgray;
+  border: solid 2px grey;
   transition: background 0.3s ease;
-  width: 204px;
+  width: 30%;
   height: 45px;
   text-align: center;
 }
@@ -18,10 +19,11 @@
 .submit-btn {
   color: white;
   padding: 8px 24px;
-  border-radius: 4px;
-  background: rgb(7, 71, 90);
+  border: 2px solid #2b5058;
+  border-radius: 5px;
+  background: #2b5058;
   transition: background 0.3s ease;
-  width: 204px;
+  width: 30%;
   height: 45px;
   text-align: center;
 }
@@ -30,25 +32,26 @@
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
-  background: rgb(7, 71, 90);
+  background: #dc3545;
+  border: solid 2px red;
   transition: background 0.3s ease;
   text-decoration: none;
-  width: 204px;
+  width: 30%;
   height: 45px;
   text-align: center;
 }
 
 .back-btn:hover {
-  background: #3485aa;
-  color: white;
+  opacity: 0.9;
+  box-shadow: 2px 2px 2px black;
 }
 
 .submit-btn:hover {
-  background: #3485aa;
-  color: white;
+  opacity: 0.9;
+  box-shadow: 2px 2px 2px black;
 }
 
 .clear-btn:hover {
-  background: #3485aa;
-  color: white;
+  opacity: 0.9;
+  box-shadow: 2px 2px 2px black;
 }

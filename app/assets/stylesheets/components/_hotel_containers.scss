@@ -13,9 +13,9 @@
 }
 
 .card-product {
-  // width: 500px;
+  width: 100%;
   overflow: hidden;
-  // height: 220px;
+  height: 200px;
   background: rgb(248, 248, 248);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   // justify-content: space-between;
@@ -26,7 +26,7 @@
 
 .card-product img {
   max-height: 250px;
-  width: 60%;
+  width: 50%;
   object-fit: cover;
 }
 
@@ -37,7 +37,7 @@
 }
 
 .card-product p {
-  font-size: 13px;
+  font-size: 0.8rem;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 9px;
@@ -47,21 +47,22 @@
 
 .card-product-info {
   padding: 7px 10px;
+  width: 50%;
   margin-left: 6px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
   h3 {
-    font-size: 21px;
-    font-weight: light;
+    font-size: 1.2rem;
+    font-weight: 700;
     font-family: sans-serif;
   }
 
   h6 {
     color:red;
     font-weight: 700;
-    font-size: 0.9rem;
+    font-size: 1rem;
 
     span {
       color: #2b5058;
@@ -80,4 +81,10 @@
   border-radius: 5px;
   font-size: 1rem;
   background-color:#2b5058;
+  border: 2px solid #2b5058;
+}
+
+.crime-btn:hover {
+  opacity: 0.9;
+  box-shadow: 2px 2px 2px black;
 }

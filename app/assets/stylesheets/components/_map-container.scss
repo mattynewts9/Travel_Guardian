@@ -60,3 +60,45 @@
       margin-top: 20px;
     }
   }
+
+
+@media(max-width:1051px){
+  .table-container {
+    td {
+      padding: 11px;
+    }
+  }
+}
+
+@media(max-width:823px){
+  .table-container {
+    td {
+      padding: 10px;
+    }
+  }
+}
+
+@media(max-width:781px){
+  .table-container {
+    td{
+      padding: 10px;
+    }
+  }
+}
+
+
+@media(max-width:787px){
+  .map-container{
+    flex-direction: column;
+    height: 1000px;
+  }
+
+  .mapboxgl-map {
+    width: 100%;
+    height: 100%;
+  }
+
+  .table-container{
+    width: 100%;
+  }
+}

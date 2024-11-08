@@ -6,10 +6,10 @@
     <div class="card-fav">
       <%= image_tag favourite.hotel.image %>
       <div class="card-fav-infos">
-        <div>
+        <div class="favourite-card-info">
          <h2 class="hotel-name"><%= favourite.hotel.name %></h2>
          <p><%= favourite.hotel.address %></p>
-         <h2 class="crime-rating"> Crime rating : <%= favourite.hotel.crime_rating %></h2>
+         <h2 class="crime-rating"><span>Safety rating:</span> <%= favourite.hotel.crime_rating %></h2>
 
         </div>
         <div class="heart">

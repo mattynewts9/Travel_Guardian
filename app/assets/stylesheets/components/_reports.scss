@@ -25,6 +25,7 @@
 
 .report-info  {
   width: 100%;
+  margin-top: 10px;
 }
 
 
@@ -38,6 +39,11 @@
 
 .report-title{
   text-align: center;
+  margin: 2rem;
+}
+
+.add-report-title {
+  margin: 1rem;
 }
 
 .report-description {
@@ -57,8 +63,6 @@
 
 .hotel-report-details {
     border: 3px solid #2b5058;
-    margin-bottom: 3rem;
-    padding: 1.5rem;
     background-color: #f8f9fa;
     border-radius: 0.5rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -67,9 +71,62 @@
     font-family: "kanit";
     margin-top: 25px;
     display: flex;
-    align-items: center;
+    width: 95%;
 }
 
 .report-form {
-  width: 720px;
+  width: 100%;
 }
+
+.report-form-container{
+  margin: 1rem;
+}
+
+.hotel-report-image {
+  img{
+    width: 100%;
+  }
+}
+
+
+.hotel-report-name {
+  text-align: center;
+  font-family: sans-serif;
+  padding: 1rem;
+  color: #223e44;
+  font-weight: bold;
+}
+
+.report-container {
+  max-width: 800px;
+  margin: auto;
+}
+
+
+@media(max-width:694px)
+{
+  .clear-btn {
+    display: none;
+  }
+
+  #go-back-btn {
+    width: 48%;
+  }
+
+  #add-report-btn {
+    width: 48%;
+  }
+
+  .crime-info {
+    margin-top: 10px;
+    font-size: 0.9rem;
+  }
+}
+
+@media(max-width: 690px){
+
+  .hotel-report-details {
+    width: 100%;
+  }
+
+  }

@@ -1,19 +1,35 @@
 // Styling for the hotel details, favorites, and report sections
 .hotel-details {
+  display: flex;
   border: 3px solid #2b5058;
   margin-bottom: 3rem; // Add consistent spacing between sections
-  padding: 1.5rem; // Give sections some padding for better layout
   background-color: #f8f9fa; // Light background for section contrast
   border-radius: 0.5rem; // Smooth corners for modern look
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); // Soft shadow for depth
-  justify-content: center;
   font-family: "kanit";
-  // height: 450px;
+  height: 100%;
   margin-top: 25px;
 
-  p:nth-child(2) {
+  p {
+    font-size: 1.2rem;
+    line-height: 1.4;
+    opacity: .7;
+    margin-bottom: 9px;
+    margin-top: 8px;
+    color: grey;
+  }
+
+  h6 {
+    font-weight: bold;
     color: red;
-    font-weight: 500;
+    font-size: 1.5rem;
+  }
+
+  img {
+    width: 40%;
+    object-fit: cover;
+    margin-right: 1rem;
+
   }
 }
 
@@ -33,11 +49,11 @@
 }
 
 .hotel-details h1 {
-  margin-bottom: 1.5rem;
-  font-size: 2.5rem; // Bigger font size for hotel name
-  color: #333; // Darker color for better contrast
-  text-align: left;
-  font-size: 2.75rem;;
+  font-size: 2.6rem;
+  font-weight: 700;
+  font-family: sans-serif;
+  margin-bottom: 1rem;
+  color: black;
 }
 
 .hotel-container-show {
@@ -46,13 +62,20 @@
 
 .hotel-content-items {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+  padding: 10px;
 }
 
-// .img-fluid {
-//   max-width: 46%;
-//   height: auto;
-// }
+#crime-categories {
+  margin-bottom: 2rem;
+  color: black;
+  font-size: 1.4rem;
+}
+
+#report-crime-text {
+  color: black;
+}
 
 // Customize button appearance
 .btn {
@@ -69,13 +92,15 @@
   border: none; // Remove border
   color: white;
   font-family: "kanit";
-  width: 385px;
 }
 
 
 .btn-success:hover {
-  background-color: #2b5058ac;
-  color: rgb(255, 255, 255);
+  background-color: #2b5058;
+  border: 2px solid #2b5058;
+  opacity: 0.9;
+  color: white;
+  box-shadow: 2px 2px 2px black;
 }
 
 .btn-danger {
@@ -84,6 +109,10 @@
 }
 
 .btn-danger:hover {
+  opacity: 0.9;
+  color: white;
+  border: 2px solid #2b5058;
+  box-shadow: 2px 2px 2px black;
   background-color: #c82333; // Darker red on hover
 }
 
@@ -97,20 +126,22 @@
 }
 
 .hotel-content-container {
-  padding: 24px;
+  padding: 28px;
+  height: 465px;
 }
-
-.hotel-content-items
 
 .btn-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: end;
+  margin-left: 2rem;
+  margin: 10px;
+  width: 30%;
 }
 
 .hotel-title-img img {
   object-fit: cover;
-  height: 328px;
+  height: 100%;
   border-radius: 10px
 }
 
@@ -118,4 +149,123 @@
   display: flex;
   align-items: center;
   gap: 20px;
+}
+
+.rating-text {
+
+  h3 {
+  font-weight: 500;
+}
+}
+
+
+@media(max-width:1057){
+  .card-product-container{
+    display: grid;
+    grid-gap:16px;
+  }
+}
+
+@media(max-width:680px){
+  .hotel-body-container {
+    padding: 17px;
+    display: flex;
+    flex-direction: column;
+
+    .container-crime {
+      text-align: start;
+
+    // .container-crime:first-child(1){
+    //   font-size: 0.9rem;
+    // }
+    }
+  }
+
+  .card-product-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+
+    h3{
+      font-size: 1rem;
+    }
+
+
+    h6{
+      font-size: 0.75rem;
+    }
+
+    .crime-btn {
+      font-size: 0.7rem;
+    }
+
+    .card-product-info p {
+      font-size: 0.7rem;
+
+    }
+  }
+}
+
+
+@media(max-width:1509px){
+
+  .card-product-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+@media(max-width:1049px){
+  .card-product-container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media(max-width:1049px){
+.hotel-content-container {
+  height: 100%;
+}
+
+  .hotel-details {
+    display: flex;
+    flex-direction: column;
+
+  h1 {
+    font-size: 2.0rem;
+    margin-bottom: 0px;
+  }
+
+  p {
+    font-size: 1.0rem;
+  }
+
+  img {
+    height: 234px;
+    width: 100%;
+  }
+
+  .btn-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 10px;
+    width: 100%;
+  }
+  }
+
+  .hotel-details {
+    h6 {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+}
+
+.report-description p {
+  font-size: 1.0rem;
+}
+
+
 }

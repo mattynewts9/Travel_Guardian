@@ -1,11 +1,9 @@
 .container-fav {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 100px;
-  flex-wrap: wrap;
+  gap: 60px;
   justify-content: space-between;
-  padding: 0 180px;
-
+  padding: 0 30px;
   margin-bottom: 152px;
 }
 
@@ -13,18 +11,19 @@
 .fav-header {
   text-align: center;
   font-family: sans-serif;
-  padding: 80px;
+  padding: 40px;
   color: rgb(34, 62, 68);
   font-weight: bold;
 
 }
 
-
-
 .hotel-name {
-  font-family: sans-serif;
-  font-size: 18px;
-  font-weight: bolder;
+  font-family: "kanit";
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 2rem;
+  margin-right: 24px;
   }
 
 .card-fav {
@@ -35,36 +34,48 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 400px;
+  height: 100%;
   width: 90%;
+
   & img {
-    height: 260px;
+    height: 60%;
+    width: 100%;
     object-fit: cover;
   }
 }
 
+.crime-rating span {
+  color: red;
+}
+
 .card-fav-infos  {
-  font-size: 14px;
-  margin: 0;
+  font-size: 1rem;
+  margin: 5px;
   padding: 4px;
   color: rgb(3, 40, 51);
   font-family: "kanit";
 }
 
 .card-fav-infos p {
-  font-size: 12px;
+  font-size: 0.9rem;
   opacity: .7;
+  color: grey;
   margin: 1px;
+  margin-bottom: 2rem;
 
+}
+
+.favourite-card-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 
 .card-fav .card-fav-infos {
-  padding: 16px;
+  padding: 10px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
   position: relative;
 }
 
@@ -84,8 +95,36 @@
 }
 
 .crime-rating {
-  font-size: 14px;
+  font-size: 1.3rem;
   font-weight: bold;
   color: rgb(34, 62, 68);
 
+}
+
+
+@media(max-width:1027px){
+  .container-fav {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width:720px){
+  .container-fav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+@media(max-width: 700px){
+  .card-fav {
+    width: 100%;
+  }
+}
+
+@media(min-width:727px){
+  .fav-header {
+    margin-left: -45px;
+  }
 }
