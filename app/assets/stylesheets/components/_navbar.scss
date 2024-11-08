@@ -237,6 +237,12 @@ a {
   }
 }
 
+@media(max-width:375px){
+  .logo img {
+    margin-left: 5%;
+  }
+}
+
 
 @media(max-width:680px) {
 

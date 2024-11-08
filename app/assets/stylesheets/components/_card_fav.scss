@@ -23,6 +23,7 @@
   font-weight: bold;
   color: black;
   margin-bottom: 2rem;
+  margin-right: 24px;
   }
 
 .card-fav {
@@ -113,5 +114,17 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+  }
+}
+
+@media(max-width: 700px){
+  .card-fav {
+    width: 100%;
+  }
+}
+
+@media(min-width:727px){
+  .fav-header {
+    margin-left: -45px;
   }
 }
