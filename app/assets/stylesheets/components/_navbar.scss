@@ -178,6 +178,9 @@ a {
 @media(max-width:872px){
   .hamburger {
     display: block;
+    position: absolute;
+    top: 15px;
+    transform: translateX(330px);
   }
 
   .hamburger.active .bar:nth-child(2){
@@ -192,6 +195,7 @@ a {
   }
 
   .nav-menu {
+    display: none;
     position: fixed;
     left: -100%;
     top: 70px;
@@ -201,6 +205,22 @@ a {
     width: 100%;
     text-align: center;
     transition: 0.3s;
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .align-now {
+    width: 90%;
+    font-family: 'kanit';
+    color: #2b5058;
+
+  .dropdown-log-out {
+    color: red;
+  }
+
+  .sign-in {
+    color: rgb(5, 153, 5);
+  }
   }
 
   .nav-item {

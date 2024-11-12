@@ -20,7 +20,6 @@ export default class extends Controller {
     this.#addHotelMarkersToMap();
     this.#fitMapToMarkers();
     this.#addCrimeMarkersToMap();
-    // this.#loadMap();
   }
 
   #fitMapToMarkers() {
@@ -56,8 +55,4 @@ export default class extends Controller {
         .addTo(this.map);
     });
   }
-
-  // #loadMap() {
-  //   this.loadMapValue.forEach((map))
-  // }
 }

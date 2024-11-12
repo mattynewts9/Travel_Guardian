@@ -8,7 +8,7 @@ export default class extends Controller {
   toggleMenu() {
     console.log("toggle menu clicked");
     this.hamburgerTarget.classList.toggle("active");
-    this.navMenuTarget.classList.toggle("hidden");
+    this.navMenuTarget.classList.toggle("nav-menu");
   }
 
   removeActive() {

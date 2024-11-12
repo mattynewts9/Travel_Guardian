@@ -11,4 +11,4 @@ import MapController from "./map_controller"
 application.register("map", MapController)
 
 import ToggleNavController from "./toggle_nav_controller"
-application.register("toggleNav", ToggleNavController)
+application.register("toggle-nav", ToggleNavController)

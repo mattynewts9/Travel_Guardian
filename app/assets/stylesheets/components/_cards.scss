@@ -47,13 +47,12 @@
 
 .card-category-icon  {
   position: absolute;
-  top: -50px;
-  display: flex;
-  align-items: center;
-  margin-left: 15px;
-  left: 108px;
-
-
+    top: -50px;
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+    /* left: 129px; */
+    transform: translateX(50%);
 }
 
 .card-category img {
