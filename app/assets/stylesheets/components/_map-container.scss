@@ -98,9 +98,9 @@
     height: 1000px;
   }
 
-  .mapboxgl-map {
-    width: 100%;
-    height: 100%;
+  .mapbox {
+    width: 100% !important;
+    height: 100% !important;
   }
 
   .table-container{

@@ -18,7 +18,6 @@
         <th><%=%> Crimes within the area of <%= params[:search].capitalize %></th>
         <th>Crime Count</th>
       </tr>
-      <tr>
         <% @crimes.group_by(&:category).each do |category, crimes_in_category| %>
       <tr>
         <td><%= category.capitalize %></td>
@@ -26,7 +25,6 @@
       </tr>
         <% end %>
     </table>
-
     <div class="mapbox" style="width: 50%; height: 100%; border-radius:5px;"
       data-controller="map"
       data-map-hotel-markers-value="<%= @hotel_markers.to_json %>"

@@ -209,6 +209,80 @@ a {
     margin-bottom: 1rem;
   }
 
+.nav-link {
+    a .nav-link::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background-color: #11302d;
+      bottom: -5px;
+      left: 0;
+      transition: width 0.3s ease;
+    }
+
+    a .nav-link:hover::after {
+      width: 50%;
+    }
+
+
+    a .nav-link:hover {
+      color: #00a99d;
+    }
+
+
+    a .nav-link .dropdown-log-out {
+      color: #2b5058;
+      position: relative;
+      text-decoration: none;
+    }
+
+     a .nav-link .dropdown-log-out:hover {
+      color: red;
+    }
+
+    a .nav-link .dropdown-log-out::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background-color: rgb(147, 29, 29);
+      bottom: -5px;
+      left: 0;
+      transition: width 0.3s ease;
+    }
+
+    a .nav-link .sign-in:hover::after {
+      width: 50%;
+    }
+
+
+    a .nav-link .sign-in {
+      color: #2b5058;
+      position: relative;
+      text-decoration: none;
+    }
+
+    a .nav-link .sign-in:hover {
+      color: rgb(5, 153, 5);
+    }
+
+    a .nav-link .sign-in::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background-color: rgb(32, 119, 53);
+      bottom: -5px;
+      left: 0;
+      transition: width 0.3s ease;
+    }
+
+    a .nav-link .sign-in:hover::after {
+      width: 50%; /* Expands underline on hover */
+    }
+  }
+
   .align-now {
     width: 90%;
     font-family: 'kanit';
@@ -302,7 +376,7 @@ a {
     bottom: 75%;
     right: 0%;
     color: white;
-    font-family: kanit;
+    font-family: 'kanit';
     z-index: 1000;
   }
 }
