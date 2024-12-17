@@ -130,8 +130,10 @@ GEM
     execjs (2.9.1)
     faker (3.5.1)
       i18n (>= 1.8.11, < 2)
-    ffi (1.17.0)
-    font-awesome-sass (6.5.2)
+    ffi (1.17.0-arm64-darwin)
+    ffi (1.17.0-x86_64-darwin)
+    ffi (1.17.0-x86_64-linux-gnu)
+    font-awesome-sass (6.7.2)
       sassc (~> 2.0)
     geocoder (1.8.3)
       base64 (>= 0.1.0)
@@ -354,7 +356,7 @@ DEPENDENCIES
   dotenv-rails
   error_highlight (>= 0.4.0)
   faker
-  font-awesome-sass (~> 6.1)
+  font-awesome-sass (~> 6.7)
   geocoder
   importmap-rails (~> 2.0.3)
   pg (~> 1.1)
